@@ -423,6 +423,7 @@
             <F N="BigDisplay2019/Src/usart.c"/>
             <F N="BigDisplay2019/Src/wide.c"/>
          </Folder>
+         <F N="BigDisplay2019/License.txt"/>
       </Folder>
    </Files>
 </Project>
