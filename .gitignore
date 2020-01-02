@@ -1,0 +1,15 @@
+*.out
+*.ninja_deps
+*.ninja_log
+*.pbd
+*.pbw
+*.browse
+*.pbi
+*.o
+*.dep
+*.xcl
+*.ninja
+settings
+*.sim
+*.vpwhist
+*.vtg

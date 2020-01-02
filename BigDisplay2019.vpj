@@ -1,0 +1,428 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+   WorkingDir="."
+   Version="10.0"
+   VendorName="SlickEdit"
+   TemplateName="IAR&amp;.20.5"
+   Customized="1">
+   <Config
+      Name="Release"
+      OutputFile=""
+      CompilerConfigName="">
+      <Menu>
+         <Target
+            Name="Compile"
+            MenuCaption="&amp;Compile"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveCurrent"
+            RunFromDir="%rw">
+            <Exec/>
+         </Target>
+         <Target
+            Name="Build"
+            MenuCaption="&amp;Build"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec/>
+         </Target>
+         <Target
+            Name="Rebuild"
+            MenuCaption="&amp;Rebuild"
+            CaptureOutputWith="ProcessBuffer"
+            SaveOption="SaveWorkspaceFiles"
+            RunFromDir="%rw">
+            <Exec/>
+         </Target>
+         <Target
+            Name="Debug"
+            MenuCaption="&amp;Debug"
+            SaveOption="SaveNone"
+            RunFromDir="%rw">
+            <Exec/>
+         </Target>
+         <Target
+            Name="Execute"
+            MenuCaption="E&amp;xecute"
+            SaveOption="SaveNone"
+            RunFromDir="%rw">
+            <Exec CmdLine='"BigDisplay2019.exe"'/>
+         </Target>
+      </Menu>
+      <Includes>
+         <Include Dir="C:/Program Files (x86)/IAR Systems/Embedded Workbench 7.20.5/arm/inc/ST/"/>
+         <Include Dir="C:/Program Files (x86)/IAR Systems/Embedded Workbench 7.20.5/arm/inc/c/"/>
+         <Include Dir="C:/Program Files (x86)/IAR Systems/Embedded Workbench 7.20.5/arm/inc/asm/"/>
+      </Includes>
+   </Config>
+   <CustomFolders>
+      <Folder
+         Name="Source Files"
+         Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.scala;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go;*.groovy;*.gsh"
+         GUID="{C1AA4784-743F-42F8-EBFE-97444F46459B}"></Folder>
+      <Folder
+         Name="Header Files"
+         Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"
+         GUID="{5D741EB9-F0CA-4187-B107-8F00D7251CA7}"></Folder>
+      <Folder
+         Name="Resource Files"
+         Filters="*.ico;*.cur;*.dlg"
+         GUID="{563AE6F9-312D-4705-A28A-6F0118459FB9}"/>
+      <Folder
+         Name="Bitmaps"
+         Filters="*.bmp"
+         GUID="{DE5AAFB5-B0BD-4FCE-E0C3-DBD9934DB89F}"/>
+      <Folder
+         Name="Other Files"
+         Filters=""
+         GUID="{2D23453C-EE2C-4CC3-71A7-48F2E0A1868A}"/>
+   </CustomFolders>
+   <Files AutoFolders="DirectoryView">
+      <Folder Name="BigDisplay2019">
+         <Folder Name="Drivers">
+            <Folder Name="CMSIS">
+               <Folder Name="Device">
+                  <Folder Name="ST">
+                     <Folder Name="STM32F4xx">
+                        <Folder Name="Include">
+                           <F N="BigDisplay2019/Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f446xx.h"/>
+                           <F N="BigDisplay2019/Drivers/CMSIS/Device/ST/STM32F4xx/Include/system_stm32f4xx.h"/>
+                        </Folder>
+                        <Folder Name="Source">
+                           <Folder Name="Templates">
+                              <F N="BigDisplay2019/Drivers/CMSIS/Device/ST/STM32F4xx/Source/Templates/system_stm32f4xx.c"/>
+                           </Folder>
+                        </Folder>
+                     </Folder>
+                  </Folder>
+               </Folder>
+               <Folder Name="Include">
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/arm_common_tables.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/arm_const_structs.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/arm_math.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/cmsis_armcc.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/cmsis_armcc_V6.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/cmsis_gcc.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cm0.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cm0plus.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cm3.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cm4.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cm7.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cmFunc.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cmInstr.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_cmSimd.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_sc000.h"/>
+                  <F N="BigDisplay2019/Drivers/CMSIS/Include/core_sc300.h"/>
+               </Folder>
+               <Folder Name="RTOS">
+                  <Folder Name="Template">
+                     <F N="BigDisplay2019/Drivers/CMSIS/RTOS/Template/cmsis_os.h"/>
+                  </Folder>
+               </Folder>
+            </Folder>
+            <Folder Name="STM32F4xx_HAL_Driver">
+               <Folder Name="Inc">
+                  <Folder Name="Legacy">
+                     <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h"/>
+                  </Folder>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32_assert_template.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_adc_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_can.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cec.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_conf_template.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cortex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_crc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_cryp_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dac_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dcmi_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_def.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dfsdm.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma2d.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dma_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_dsi.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_eth.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_flash_ramfunc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_fmpi2c_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_gpio_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hash_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_hcd.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2c_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_i2s_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_irda.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_iwdg.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_lptim.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_ltdc_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_mmc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nand.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_nor.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pccard.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pcd_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_pwr_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_qspi.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rcc_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rng.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_rtc_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sai_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sd.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sdram.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_smartcard.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spdifrx.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_spi.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_sram.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_usart.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_wwdg.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_adc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_bus.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_cortex.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_crc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dac.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_dma2d.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_exti.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fmc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_fsmc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_gpio.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_i2c.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_iwdg.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_lptim.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_pwr.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rcc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rng.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_rtc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_sdmmc.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_spi.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_system.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_tim.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usart.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_usb.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_utils.h"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_ll_wwdg.h"/>
+               </Folder>
+               <Folder Name="Src">
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_can.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cec.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_crc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cryp_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dac_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dcmi_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dfsdm.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma2d.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dsi.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_fmpi2c_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hash_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_hcd.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2c_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_i2s_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_irda.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_iwdg.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_lptim.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_ltdc_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_mmc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_msp_template.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nand.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_nor.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pccard.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pcd_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_qspi.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rng.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rtc_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sai_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sd.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sdram.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_smartcard.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spdifrx.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_spi.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_sram.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_timebase_rtc_alarm_template.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_timebase_rtc_wakeup_template.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_timebase_tim_template.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_usart.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_wwdg.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_adc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_crc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dac.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_dma2d.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_exti.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fmc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_fsmc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_gpio.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_i2c.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_lptim.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_pwr.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rcc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rng.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_rtc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_sdmmc.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_spi.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_tim.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usart.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_usb.c"/>
+                  <F N="BigDisplay2019/Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_ll_utils.c"/>
+               </Folder>
+            </Folder>
+         </Folder>
+         <Folder Name="EWARM">
+            <F N="BigDisplay2019/EWARM/startup_stm32f446xx.s"/>
+            <F N="BigDisplay2019/EWARM/stm32f446xx_flash.icf"/>
+            <F N="BigDisplay2019/EWARM/stm32f446xx_sram.icf"/>
+         </Folder>
+         <Folder Name="Inc">
+            <F N="BigDisplay2019/Inc/DisplayDriver.h"/>
+            <F N="BigDisplay2019/Inc/DisplayDriverInternal.h"/>
+            <F N="BigDisplay2019/Inc/FreeRTOSConfig.h"/>
+            <F N="BigDisplay2019/Inc/gpio.h"/>
+            <F N="BigDisplay2019/Inc/IOConfiguration.h"/>
+            <F N="BigDisplay2019/Inc/main.h"/>
+            <F N="BigDisplay2019/Inc/stm32f4xx_hal_conf.h"/>
+            <F N="BigDisplay2019/Inc/stm32f4xx_it.h"/>
+            <F N="BigDisplay2019/Inc/usart.h"/>
+         </Folder>
+         <Folder Name="Middlewares">
+            <Folder Name="Third_Party">
+               <Folder Name="FreeRTOS">
+                  <Folder Name="Source">
+                     <Folder Name="CMSIS_RTOS">
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"/>
+                     </Folder>
+                     <Folder Name="include">
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/croutine.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOSConfig_template.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/list.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_prototypes.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/portable.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/StackMacros.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/task.h"/>
+                        <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/include/timers.h"/>
+                     </Folder>
+                     <Folder Name="portable">
+                        <Folder Name="IAR">
+                           <Folder Name="ARM_CM4F">
+                              <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/portable/IAR/ARM_CM4F/port.c"/>
+                              <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/portable/IAR/ARM_CM4F/portmacro.h"/>
+                           </Folder>
+                        </Folder>
+                        <Folder Name="MemMang">
+                           <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_1.c"/>
+                           <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_2.c"/>
+                           <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_3.c"/>
+                           <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c"/>
+                           <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_5.c"/>
+                        </Folder>
+                     </Folder>
+                     <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/croutine.c"/>
+                     <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/event_groups.c"/>
+                     <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/list.c"/>
+                     <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/queue.c"/>
+                     <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/tasks.c"/>
+                     <F N="BigDisplay2019/Middlewares/Third_Party/FreeRTOS/Source/timers.c"/>
+                  </Folder>
+               </Folder>
+            </Folder>
+         </Folder>
+         <Folder Name="MLib">
+            <Folder Name="Config">
+               <F N="BigDisplay2019/MLib/Config/rtos.h"/>
+               <F N="BigDisplay2019/MLib/Config/type.h"/>
+            </Folder>
+            <Folder Name="Conio">
+               <F N="BigDisplay2019/MLib/Conio/ascii.h"/>
+            </Folder>
+            <Folder Name="F469">
+               <F N="BigDisplay2019/MLib/F469/gpioapi.c"/>
+               <F N="BigDisplay2019/MLib/F469/gpioapi.h"/>
+               <F N="BigDisplay2019/MLib/F469/gpioforth.h"/>
+               <F N="BigDisplay2019/MLib/F469/usart1.c"/>
+               <F N="BigDisplay2019/MLib/F469/usart1.h"/>
+               <F N="BigDisplay2019/MLib/F469/usart2.c"/>
+               <F N="BigDisplay2019/MLib/F469/usart2.h"/>
+               <F N="BigDisplay2019/MLib/F469/usart4.c"/>
+               <F N="BigDisplay2019/MLib/F469/usart4.h"/>
+               <F N="BigDisplay2019/MLib/F469/usartcommon.c"/>
+               <F N="BigDisplay2019/MLib/F469/usartcommon.h"/>
+            </Folder>
+            <Folder Name="Utilities">
+               <F N="BigDisplay2019/MLib/Utilities/crc.c"/>
+               <F N="BigDisplay2019/MLib/Utilities/crc.h"/>
+            </Folder>
+         </Folder>
+         <Folder Name="Src">
+            <F N="BigDisplay2019/Src/DisplayApplication.c"/>
+            <F N="BigDisplay2019/Src/DisplayApplication.h"/>
+            <F N="BigDisplay2019/Src/DisplayDriver.c"/>
+            <F N="BigDisplay2019/Src/FlashInterface.c"/>
+            <F N="BigDisplay2019/Src/Fonts.c"/>
+            <F N="BigDisplay2019/Src/Fonts.h"/>
+            <F N="BigDisplay2019/Src/fontsconvert.c"/>
+            <F N="BigDisplay2019/Src/fontsmaker.c"/>
+            <F N="BigDisplay2019/Src/gpio.c"/>
+            <F N="BigDisplay2019/Src/main.c"/>
+            <F N="BigDisplay2019/Src/source.txt"/>
+            <F N="BigDisplay2019/Src/stm32f4xx_hal_msp.c"/>
+            <F N="BigDisplay2019/Src/stm32f4xx_it.c"/>
+            <F N="BigDisplay2019/Src/system_stm32f4xx.c"/>
+            <F N="BigDisplay2019/Src/usart.c"/>
+            <F N="BigDisplay2019/Src/wide.c"/>
+         </Folder>
+      </Folder>
+   </Files>
+</Project>
