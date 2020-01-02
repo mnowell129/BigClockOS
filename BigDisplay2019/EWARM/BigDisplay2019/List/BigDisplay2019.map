@@ -1,64 +1,64 @@
 ###############################################################################
 #
-# IAR ELF Linker V8.42.1.233/W32 for ARM                  02/Jan/2020  09:47:24
+# IAR ELF Linker V8.42.1.233/W32 for ARM                  02/Jan/2020  17:16:47
 # Copyright 2007-2019 IAR Systems AB.
 #
 #    Output file  =
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Exe\BigDisplay2019.out
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Exe\BigDisplay2019.out
 #    Map file     =
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\List\BigDisplay2019.map
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\List\BigDisplay2019.map
 #    Command line =
-#        -f C:\Users\CHARLE~1\AppData\Local\Temp\EW7C6D.tmp
-#        (C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\cmsis_os.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\crc.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\croutine.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\DisplayApplication.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\DisplayDriver.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\event_groups.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\FlashInterface.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\Fonts.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\gpio.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\gpioapi.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\heap_4.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\list.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\main.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\port.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\portasm.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\queue.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\startup_stm32f446xx.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_cortex.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_dma.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_dma_ex.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_flash.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_flash_ex.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_flash_ramfunc.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_gpio.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_msp.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_pwr.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_pwr_ex.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_rcc.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_rcc_ex.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_tim.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_tim_ex.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_uart.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_it.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_ll_gpio.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_ll_rcc.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_ll_usart.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\system_stm32f4xx.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\tasks.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\timers.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\usart1.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\usart2.o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj\usart4.o
+#        -f C:\Users\CHARLE~1\AppData\Local\Temp\EWE438.tmp
+#        (C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\cmsis_os.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\crc.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\croutine.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\DisplayApplication.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\DisplayDriver.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\event_groups.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\FlashInterface.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\Fonts.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\gpio.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\gpioapi.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\heap_4.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\list.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\main.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\port.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\portasm.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\queue.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\startup_stm32f446xx.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_cortex.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_dma.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_dma_ex.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_flash.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_flash_ex.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_flash_ramfunc.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_gpio.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_msp.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_pwr.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_pwr_ex.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_rcc.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_rcc_ex.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_tim.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_tim_ex.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_hal_uart.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_it.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_ll_gpio.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_ll_rcc.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\stm32f4xx_ll_usart.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\system_stm32f4xx.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\tasks.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\timers.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\usart1.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\usart2.o
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj\usart4.o
 #        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull
 #        --no_out_extension -o
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Exe\BigDisplay2019.out
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Exe\BigDisplay2019.out
 #        --map
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\List\BigDisplay2019.map
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\List\BigDisplay2019.map
 #        --config
-#        C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM/stm32f446xx_flash.icf
+#        C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM/stm32f446xx_flash.icf
 #        --entry __iar_program_start --vfe --text_out locale --no_free_heap)
 #
 ###############################################################################
@@ -97,7 +97,7 @@ initialize by copy { rw };
   .intvec            ro code   0x800'0000     0x1c4  startup_stm32f446xx.o [1]
                              - 0x800'01c4     0x1c4
 
-"P1":                                      0x1'016b
+"P1":                                      0x1'016f
   .text              ro code   0x800'8000    0x1024  DisplayDriver.o [1]
   .text              ro code   0x800'9024     0x238  port.o [1]
   .text              ro code   0x800'925c      0x66  ABImemset.o [4]
@@ -148,172 +148,171 @@ initialize by copy { rw };
   .rodata            const     0x800'e5d4     0x240  Fonts.o [1]
   .rodata            const     0x800'e814     0x240  Fonts.o [1]
   .rodata            const     0x800'ea54     0x240  Fonts.o [1]
-  .rodata            const     0x800'ec94      0x3c  main.o [1]
-  .rodata            const     0x800'ecd0     0x200  Fonts.o [1]
-  .rodata            const     0x800'eed0     0x200  Fonts.o [1]
-  .rodata            const     0x800'f0d0     0x200  Fonts.o [1]
-  .rodata            const     0x800'f2d0     0x200  Fonts.o [1]
-  .rodata            const     0x800'f4d0     0x200  Fonts.o [1]
-  .rodata            const     0x800'f6d0     0x200  Fonts.o [1]
-  .rodata            const     0x800'f8d0     0x200  Fonts.o [1]
-  .rodata            const     0x800'fad0     0x200  Fonts.o [1]
-  .rodata            const     0x800'fcd0     0x200  Fonts.o [1]
-  .rodata            const     0x800'fed0     0x200  Fonts.o [1]
-  .rodata            const     0x801'00d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'02d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'04d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'06d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'08d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'0ad0     0x200  Fonts.o [1]
-  .rodata            const     0x801'0cd0     0x200  Fonts.o [1]
-  .rodata            const     0x801'0ed0     0x200  Fonts.o [1]
-  .rodata            const     0x801'10d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'12d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'14d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'16d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'18d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'1ad0     0x200  Fonts.o [1]
-  .rodata            const     0x801'1cd0     0x200  Fonts.o [1]
-  .rodata            const     0x801'1ed0     0x200  Fonts.o [1]
-  .rodata            const     0x801'20d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'22d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'24d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'26d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'28d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'2ad0     0x200  Fonts.o [1]
-  .rodata            const     0x801'2cd0     0x200  Fonts.o [1]
-  .rodata            const     0x801'2ed0     0x200  Fonts.o [1]
-  .rodata            const     0x801'30d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'32d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'34d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'36d0     0x200  Fonts.o [1]
-  .rodata            const     0x801'38d0     0x200  Fonts.o [1]
-  .text              ro code   0x801'3ad0     0x1a4  stm32f4xx_hal_rcc.o [1]
-  .text              ro code   0x801'3c74      0x28  stm32f4xx_hal.o [1]
-  .text              ro code   0x801'3c9c     0x140  stm32f4xx_hal_cortex.o [1]
-  .rodata            const     0x801'3ddc     0x100  crc.o [1]
-  .rodata            const     0x801'3edc     0x100  crc.o [1]
-  .rodata            const     0x801'3fdc     0x100  crc.o [1]
-  .rodata            const     0x801'40dc      0x2c  DisplayDriver.o [1]
-  .rodata            const     0x801'4108     0x100  Fonts.o [1]
-  .rodata            const     0x801'4208     0x100  Fonts.o [1]
-  .rodata            const     0x801'4308     0x100  Fonts.o [1]
-  .rodata            const     0x801'4408     0x100  Fonts.o [1]
-  .rodata            const     0x801'4508     0x100  Fonts.o [1]
-  .rodata            const     0x801'4608     0x100  Fonts.o [1]
-  .rodata            const     0x801'4708     0x100  Fonts.o [1]
-  .rodata            const     0x801'4808     0x100  Fonts.o [1]
-  .rodata            const     0x801'4908     0x100  Fonts.o [1]
-  .rodata            const     0x801'4a08     0x100  Fonts.o [1]
-  .rodata            const     0x801'4b08     0x100  Fonts.o [1]
-  .rodata            const     0x801'4c08     0x100  Fonts.o [1]
-  .rodata            const     0x801'4d08     0x100  Fonts.o [1]
-  .rodata            const     0x801'4e08     0x100  Fonts.o [1]
-  .rodata            const     0x801'4f08     0x100  Fonts.o [1]
-  .rodata            const     0x801'5008     0x100  Fonts.o [1]
-  .rodata            const     0x801'5108     0x100  Fonts.o [1]
-  .rodata            const     0x801'5208     0x100  Fonts.o [1]
-  .rodata            const     0x801'5308     0x100  Fonts.o [1]
-  .rodata            const     0x801'5408     0x100  Fonts.o [1]
-  .rodata            const     0x801'5508     0x100  Fonts.o [1]
-  .rodata            const     0x801'5608     0x100  Fonts.o [1]
-  .rodata            const     0x801'5708     0x100  Fonts.o [1]
-  .rodata            const     0x801'5808     0x100  Fonts.o [1]
-  .rodata            const     0x801'5908     0x100  Fonts.o [1]
-  .rodata            const     0x801'5a08     0x100  Fonts.o [1]
-  .rodata            const     0x801'5b08     0x100  Fonts.o [1]
-  .rodata            const     0x801'5c08     0x100  Fonts.o [1]
-  .rodata            const     0x801'5d08     0x100  Fonts.o [1]
-  .rodata            const     0x801'5e08     0x100  Fonts.o [1]
-  .rodata            const     0x801'5f08     0x100  Fonts.o [1]
-  .rodata            const     0x801'6008     0x100  Fonts.o [1]
-  .rodata            const     0x801'6108     0x100  Fonts.o [1]
-  .rodata            const     0x801'6208     0x100  Fonts.o [1]
-  .rodata            const     0x801'6308     0x100  Fonts.o [1]
-  .rodata            const     0x801'6408     0x100  Fonts.o [1]
-  .text              ro code   0x801'6508      0xf6  main.o [1]
-  .text              ro code   0x801'6600      0x90  stm32f4xx_hal_pwr_ex.o [1]
-  .text              ro code   0x801'6690      0x34  stm32f4xx_hal.o [1]
-  .text              ro code   0x801'66c4      0xe0  gpio.o [1]
-  .text              ro code   0x801'67a4      0x5e  stm32f4xx_hal_msp.o [1]
-  .rodata            const     0x801'6804      0x80  Fonts.o [1]
-  .rodata            const     0x801'6884      0x80  Fonts.o [1]
-  .rodata            const     0x801'6904      0x80  Fonts.o [1]
-  .rodata            const     0x801'6984      0x80  Fonts.o [1]
-  .rodata            const     0x801'6a04      0x80  Fonts.o [1]
-  .rodata            const     0x801'6a84      0x80  Fonts.o [1]
-  .rodata            const     0x801'6b04      0x80  Fonts.o [1]
-  .rodata            const     0x801'6b84      0x80  Fonts.o [1]
-  .rodata            const     0x801'6c04      0x80  Fonts.o [1]
-  .rodata            const     0x801'6c84      0x80  Fonts.o [1]
-  .rodata            const     0x801'6d04      0x80  Fonts.o [1]
-  .rodata            const     0x801'6d84      0x80  Fonts.o [1]
-  .rodata            const     0x801'6e04      0x80  Fonts.o [1]
-  .rodata            const     0x801'6e84      0x80  Fonts.o [1]
-  .rodata            const     0x801'6f04      0x80  Fonts.o [1]
-  .rodata            const     0x801'6f84      0x80  Fonts.o [1]
-  .rodata            const     0x801'7004      0x80  Fonts.o [1]
-  .rodata            const     0x801'7084      0x80  Fonts.o [1]
-  .rodata            const     0x801'7104      0x80  Fonts.o [1]
-  .rodata            const     0x801'7184      0x80  Fonts.o [1]
-  .rodata            const     0x801'7204      0x80  Fonts.o [1]
-  .rodata            const     0x801'7284      0x80  Fonts.o [1]
-  .rodata            const     0x801'7304      0x80  Fonts.o [1]
-  .rodata            const     0x801'7384      0x80  Fonts.o [1]
-  .rodata            const     0x801'7404      0x80  Fonts.o [1]
-  .rodata            const     0x801'7484      0x80  Fonts.o [1]
-  .rodata            const     0x801'7504      0x80  Fonts.o [1]
-  .rodata            const     0x801'7584      0x80  Fonts.o [1]
-  .rodata            const     0x801'7604      0x80  Fonts.o [1]
-  .rodata            const     0x801'7684      0x80  Fonts.o [1]
-  .rodata            const     0x801'7704      0x80  Fonts.o [1]
-  .rodata            const     0x801'7784      0x80  Fonts.o [1]
-  .rodata            const     0x801'7804      0x80  Fonts.o [1]
-  .rodata            const     0x801'7884      0x80  Fonts.o [1]
-  .rodata            const     0x801'7904      0x80  Fonts.o [1]
-  .rodata            const     0x801'7984      0x80  Fonts.o [1]
-  .text              ro code   0x801'7a04      0x78  lz77_init_single.o [4]
-  .rodata            const     0x801'7a7c      0x68  Fonts.o [1]
-  .rodata            const     0x801'7ae4      0x68  Fonts.o [1]
-  .rodata            const     0x801'7b4c      0x68  Fonts.o [1]
-  .text              ro code   0x801'7bb4      0x60  system_stm32f4xx.o [1]
-  .rodata            const     0x801'7c14      0x50  iar_Stoulx.o [2]
-  .rodata            const     0x801'7c64      0x30  DisplayDriver.o [1]
-  .rodata            const     0x801'7c94      0x30  DisplayDriver.o [1]
-  .rodata            const     0x801'7cc4      0x28  Fonts.o [1]
+  .rodata            const     0x800'ec94      0x2c  DisplayDriver.o [1]
+  .rodata            const     0x800'ecc0     0x200  Fonts.o [1]
+  .rodata            const     0x800'eec0     0x200  Fonts.o [1]
+  .rodata            const     0x800'f0c0     0x200  Fonts.o [1]
+  .rodata            const     0x800'f2c0     0x200  Fonts.o [1]
+  .rodata            const     0x800'f4c0     0x200  Fonts.o [1]
+  .rodata            const     0x800'f6c0     0x200  Fonts.o [1]
+  .rodata            const     0x800'f8c0     0x200  Fonts.o [1]
+  .rodata            const     0x800'fac0     0x200  Fonts.o [1]
+  .rodata            const     0x800'fcc0     0x200  Fonts.o [1]
+  .rodata            const     0x800'fec0     0x200  Fonts.o [1]
+  .rodata            const     0x801'00c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'02c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'04c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'06c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'08c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'0ac0     0x200  Fonts.o [1]
+  .rodata            const     0x801'0cc0     0x200  Fonts.o [1]
+  .rodata            const     0x801'0ec0     0x200  Fonts.o [1]
+  .rodata            const     0x801'10c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'12c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'14c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'16c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'18c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'1ac0     0x200  Fonts.o [1]
+  .rodata            const     0x801'1cc0     0x200  Fonts.o [1]
+  .rodata            const     0x801'1ec0     0x200  Fonts.o [1]
+  .rodata            const     0x801'20c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'22c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'24c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'26c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'28c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'2ac0     0x200  Fonts.o [1]
+  .rodata            const     0x801'2cc0     0x200  Fonts.o [1]
+  .rodata            const     0x801'2ec0     0x200  Fonts.o [1]
+  .rodata            const     0x801'30c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'32c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'34c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'36c0     0x200  Fonts.o [1]
+  .rodata            const     0x801'38c0     0x200  Fonts.o [1]
+  .text              ro code   0x801'3ac0     0x1a4  stm32f4xx_hal_rcc.o [1]
+  .text              ro code   0x801'3c64      0x28  stm32f4xx_hal.o [1]
+  .text              ro code   0x801'3c8c     0x140  stm32f4xx_hal_cortex.o [1]
+  .rodata            const     0x801'3dcc     0x100  crc.o [1]
+  .rodata            const     0x801'3ecc     0x100  crc.o [1]
+  .rodata            const     0x801'3fcc     0x100  crc.o [1]
+  .rodata            const     0x801'40cc      0x24  Fonts.o [1]
+  .rodata            const     0x801'40f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'41f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'42f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'43f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'44f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'45f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'46f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'47f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'48f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'49f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'4af0     0x100  Fonts.o [1]
+  .rodata            const     0x801'4bf0     0x100  Fonts.o [1]
+  .rodata            const     0x801'4cf0     0x100  Fonts.o [1]
+  .rodata            const     0x801'4df0     0x100  Fonts.o [1]
+  .rodata            const     0x801'4ef0     0x100  Fonts.o [1]
+  .rodata            const     0x801'4ff0     0x100  Fonts.o [1]
+  .rodata            const     0x801'50f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'51f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'52f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'53f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'54f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'55f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'56f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'57f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'58f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'59f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'5af0     0x100  Fonts.o [1]
+  .rodata            const     0x801'5bf0     0x100  Fonts.o [1]
+  .rodata            const     0x801'5cf0     0x100  Fonts.o [1]
+  .rodata            const     0x801'5df0     0x100  Fonts.o [1]
+  .rodata            const     0x801'5ef0     0x100  Fonts.o [1]
+  .rodata            const     0x801'5ff0     0x100  Fonts.o [1]
+  .rodata            const     0x801'60f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'61f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'62f0     0x100  Fonts.o [1]
+  .rodata            const     0x801'63f0     0x100  Fonts.o [1]
+  .text              ro code   0x801'64f0      0xf6  main.o [1]
+  .text              ro code   0x801'65e8      0x90  stm32f4xx_hal_pwr_ex.o [1]
+  .text              ro code   0x801'6678      0x34  stm32f4xx_hal.o [1]
+  .text              ro code   0x801'66ac      0xe0  gpio.o [1]
+  .text              ro code   0x801'678c      0x5e  stm32f4xx_hal_msp.o [1]
+  .rodata            const     0x801'67ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'686c      0x80  Fonts.o [1]
+  .rodata            const     0x801'68ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'696c      0x80  Fonts.o [1]
+  .rodata            const     0x801'69ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'6a6c      0x80  Fonts.o [1]
+  .rodata            const     0x801'6aec      0x80  Fonts.o [1]
+  .rodata            const     0x801'6b6c      0x80  Fonts.o [1]
+  .rodata            const     0x801'6bec      0x80  Fonts.o [1]
+  .rodata            const     0x801'6c6c      0x80  Fonts.o [1]
+  .rodata            const     0x801'6cec      0x80  Fonts.o [1]
+  .rodata            const     0x801'6d6c      0x80  Fonts.o [1]
+  .rodata            const     0x801'6dec      0x80  Fonts.o [1]
+  .rodata            const     0x801'6e6c      0x80  Fonts.o [1]
+  .rodata            const     0x801'6eec      0x80  Fonts.o [1]
+  .rodata            const     0x801'6f6c      0x80  Fonts.o [1]
+  .rodata            const     0x801'6fec      0x80  Fonts.o [1]
+  .rodata            const     0x801'706c      0x80  Fonts.o [1]
+  .rodata            const     0x801'70ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'716c      0x80  Fonts.o [1]
+  .rodata            const     0x801'71ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'726c      0x80  Fonts.o [1]
+  .rodata            const     0x801'72ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'736c      0x80  Fonts.o [1]
+  .rodata            const     0x801'73ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'746c      0x80  Fonts.o [1]
+  .rodata            const     0x801'74ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'756c      0x80  Fonts.o [1]
+  .rodata            const     0x801'75ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'766c      0x80  Fonts.o [1]
+  .rodata            const     0x801'76ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'776c      0x80  Fonts.o [1]
+  .rodata            const     0x801'77ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'786c      0x80  Fonts.o [1]
+  .rodata            const     0x801'78ec      0x80  Fonts.o [1]
+  .rodata            const     0x801'796c      0x80  Fonts.o [1]
+  .text              ro code   0x801'79ec      0x78  lz77_init_single.o [4]
+  .rodata            const     0x801'7a64      0x68  Fonts.o [1]
+  .rodata            const     0x801'7acc      0x68  Fonts.o [1]
+  .rodata            const     0x801'7b34      0x68  Fonts.o [1]
+  .text              ro code   0x801'7b9c      0x60  system_stm32f4xx.o [1]
+  .rodata            const     0x801'7bfc      0x50  iar_Stoulx.o [2]
+  .rodata            const     0x801'7c4c      0x40  main.o [1]
+  .rodata            const     0x801'7c8c      0x30  DisplayDriver.o [1]
+  .rodata            const     0x801'7cbc      0x30  DisplayDriver.o [1]
   .rodata            const     0x801'7cec      0x28  Fonts.o [1]
   .rodata            const     0x801'7d14      0x28  Fonts.o [1]
-  .text              ro code   0x801'7d3c      0x28  data_init.o [4]
-  .rodata            const     0x801'7d64      0x24  Fonts.o [1]
-  .rodata            const     0x801'7d88      0x24  Fonts.o [1]
-  .text              ro code   0x801'7dac      0x22  fpinit_M.o [3]
-  .iar.init_table    const     0x801'7dd0      0x20  - Linker created -
-  .text              ro code   0x801'7df0      0x1e  cmain.o [4]
-  .text              ro code   0x801'7e0e       0x4  low_level_init.o [2]
-  .text              ro code   0x801'7e12       0x4  exit.o [2]
-  .text              ro code   0x801'7e18       0xa  cexit.o [4]
-  .text              ro code   0x801'7e24       0xc  XXexit.o [4]
-  .rodata            const     0x801'7e30      0x1c  DisplayApplication.o [1]
-  .rodata            const     0x801'7e4c      0x1c  DisplayApplication.o [1]
-  .rodata            const     0x801'7e68      0x1c  DisplayApplication.o [1]
-  .rodata            const     0x801'7e84      0x1c  DisplayApplication.o [1]
-  .rodata            const     0x801'7ea0      0x1c  DisplayApplication.o [1]
-  .rodata            const     0x801'7ebc      0x14  DisplayApplication.o [1]
-  .rodata            const     0x801'7ed0      0x14  DisplayDriver.o [1]
-  .rodata            const     0x801'7ee4      0x10  DisplayApplication.o [1]
-  .rodata            const     0x801'7ef4      0x10  system_stm32f4xx.o [1]
-  .text              ro code   0x801'7f04      0x10  startup_stm32f446xx.o [1]
-  .text              ro code   0x801'7f14      0x10  stm32f4xx_hal.o [1]
-  .rodata            const     0x801'7f24       0xc  DisplayApplication.o [1]
-  .rodata            const     0x801'7f30       0xc  DisplayApplication.o [1]
-  .rodata            const     0x801'7f3c       0xc  DisplayApplication.o [1]
-  .text              ro code   0x801'7f48       0xc  stm32f4xx_it.o [1]
-  .text              ro code   0x801'7f54       0xc  cstartup_M.o [4]
-  .rodata            const     0x801'7f60       0x8  system_stm32f4xx.o [1]
-  .rodata            const     0x801'7f68       0x8  tasks.o [1]
-  .rodata            const     0x801'7f70       0x4  heap_4.o [1]
-  .rodata            const     0x801'7f74       0x4  port.o [1]
-  .text              ro code   0x801'7f78       0x4  startup_stm32f446xx.o [1]
+  .rodata            const     0x801'7d3c      0x28  Fonts.o [1]
+  .text              ro code   0x801'7d64      0x28  data_init.o [4]
+  .rodata            const     0x801'7d8c      0x24  Fonts.o [1]
+  .text              ro code   0x801'7db0      0x22  fpinit_M.o [3]
+  .iar.init_table    const     0x801'7dd4      0x20  - Linker created -
+  .text              ro code   0x801'7df4      0x1e  cmain.o [4]
+  .text              ro code   0x801'7e12       0x4  low_level_init.o [2]
+  .text              ro code   0x801'7e16       0x4  exit.o [2]
+  .text              ro code   0x801'7e1c       0xa  cexit.o [4]
+  .text              ro code   0x801'7e28       0xc  XXexit.o [4]
+  .rodata            const     0x801'7e34      0x1c  DisplayApplication.o [1]
+  .rodata            const     0x801'7e50      0x1c  DisplayApplication.o [1]
+  .rodata            const     0x801'7e6c      0x1c  DisplayApplication.o [1]
+  .rodata            const     0x801'7e88      0x1c  DisplayApplication.o [1]
+  .rodata            const     0x801'7ea4      0x1c  DisplayApplication.o [1]
+  .rodata            const     0x801'7ec0      0x14  DisplayApplication.o [1]
+  .rodata            const     0x801'7ed4      0x14  DisplayDriver.o [1]
+  .rodata            const     0x801'7ee8      0x10  DisplayApplication.o [1]
+  .rodata            const     0x801'7ef8      0x10  system_stm32f4xx.o [1]
+  .text              ro code   0x801'7f08      0x10  startup_stm32f446xx.o [1]
+  .text              ro code   0x801'7f18      0x10  stm32f4xx_hal.o [1]
+  .rodata            const     0x801'7f28       0xc  DisplayApplication.o [1]
+  .rodata            const     0x801'7f34       0xc  DisplayApplication.o [1]
+  .rodata            const     0x801'7f40       0xc  DisplayApplication.o [1]
+  .text              ro code   0x801'7f4c       0xc  stm32f4xx_it.o [1]
+  .text              ro code   0x801'7f58       0xc  cstartup_M.o [4]
+  .rodata            const     0x801'7f64       0x8  system_stm32f4xx.o [1]
+  .rodata            const     0x801'7f6c       0x8  tasks.o [1]
+  .rodata            const     0x801'7f74       0x4  heap_4.o [1]
+  .rodata            const     0x801'7f78       0x4  port.o [1]
   .text              ro code   0x801'7f7c       0x4  startup_stm32f446xx.o [1]
   .text              ro code   0x801'7f80       0x4  startup_stm32f446xx.o [1]
   .text              ro code   0x801'7f84       0x4  startup_stm32f446xx.o [1]
@@ -402,10 +401,11 @@ initialize by copy { rw };
   .text              ro code   0x801'80d0       0x4  startup_stm32f446xx.o [1]
   .text              ro code   0x801'80d4       0x4  startup_stm32f446xx.o [1]
   .text              ro code   0x801'80d8       0x4  startup_stm32f446xx.o [1]
-  .rodata            const     0x801'80dc       0x0  zero_init3.o [4]
-  .rodata            const     0x801'80dc       0x0  lz77_init_single.o [4]
-  Initializer bytes  const     0x801'80dc      0x8f  <for P2-1>
-                             - 0x801'816b  0x1'016b
+  .text              ro code   0x801'80dc       0x4  startup_stm32f446xx.o [1]
+  .rodata            const     0x801'80e0       0x0  zero_init3.o [4]
+  .rodata            const     0x801'80e0       0x0  lz77_init_single.o [4]
+  Initializer bytes  const     0x801'80e0      0x8f  <for P2-1>
+                             - 0x801'816f  0x1'016f
 
 "P2", part 1 of 3:                            0x105
   P2-1                        0x2000'0000     0x105  <Init block>
@@ -514,7 +514,7 @@ Unused ranges:
 
          From           To      Size
          ----           --      ----
-   0x801'816b   0x807'ffff  0x6'7e95
+   0x801'816f   0x807'ffff  0x6'7e91
   0x2000'0105  0x2000'0107       0x3
   0x2000'7194  0x2000'7197       0x4
   0x2000'7598  0x2001'ffff  0x1'8a68
@@ -532,7 +532,7 @@ Zero (__iar_zero_init3)
 
 Copy/lz77 (__iar_lz77_init_single3)
     1 source range, total size 0x8f (54% of destination):
-           0x801'80dc    0x8f
+           0x801'80e0    0x8f
     1 destination range, total size 0x105:
           0x2000'0000   0x105
 
@@ -548,7 +548,7 @@ command line/config:
     ---------------------------------------------------
     Total:
 
-C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj: [1]
+C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj: [1]
     DisplayApplication.o        2'984      212      864
     DisplayDriver.o             4'132      232   10'392
     FlashInterface.o              168                52
@@ -559,7 +559,7 @@ C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj: [1]
     gpioapi.o                     328                24
     heap_4.o                      628        4   15'384
     list.o                        154
-    main.o                        246       60
+    main.o                        246       64
     port.o                        568        6        9
     portasm.o                     168
     queue.o                     1'176
@@ -583,7 +583,7 @@ C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj: [1]
     usart2.o                      722               556
     usart4.o                      722               556
     ---------------------------------------------------
-    Total:                     23'906   40'824   28'995
+    Total:                     23'906   40'828   28'995
 
 dl7M_tlf.a: [2]
     exit.o                          4
@@ -625,7 +625,7 @@ rt7M_tl.a: [4]
     Gaps                           18        4
     Linker created                          32    1'024
 -------------------------------------------------------
-    Grand Total:               25'370   40'981   30'095
+    Grand Total:               25'370   40'985   30'095
 
 
 *******************************************************************************
@@ -634,11 +634,11 @@ rt7M_tl.a: [4]
 
 Entry                       Address    Size  Type      Object
 -----                       -------    ----  ----      ------
-.iar.init_table$$Base    0x801'7dd0           --   Gb  - Linker created -
-.iar.init_table$$Limit   0x801'7df0           --   Gb  - Linker created -
-?main                    0x801'7df1          Code  Gb  cmain.o [4]
-AHBPrescTable            0x801'7ef4    0x10  Data  Gb  system_stm32f4xx.o [1]
-APBPrescTable            0x801'7f60     0x8  Data  Gb  system_stm32f4xx.o [1]
+.iar.init_table$$Base    0x801'7dd4           --   Gb  - Linker created -
+.iar.init_table$$Limit   0x801'7df4           --   Gb  - Linker created -
+?main                    0x801'7df5          Code  Gb  cmain.o [4]
+AHBPrescTable            0x801'7ef8    0x10  Data  Gb  system_stm32f4xx.o [1]
+APBPrescTable            0x801'7f64     0x8  Data  Gb  system_stm32f4xx.o [1]
 CSTACK$$Base            0x2000'7198           --   Gb  - Linker created -
 CSTACK$$Limit           0x2000'7598           --   Gb  - Linker created -
 EraseInitStruct         0x2000'704c    0x14  Data  Lc  FlashInterface.o [1]
@@ -669,23 +669,23 @@ HAL_FLASH_Unlock         0x800'c1db    0x1a  Code  Gb  stm32f4xx_hal_flash.o [1]
 HAL_GPIO_Init            0x800'd601   0x204  Code  Gb  stm32f4xx_hal_gpio.o [1]
 HAL_GPIO_WritePin        0x800'd805    0x1a  Code  Gb  stm32f4xx_hal_gpio.o [1]
 HAL_GetTick              0x800'cf2d     0xc  Code  Wk  stm32f4xx_hal.o [1]
-HAL_IncTick              0x801'7f15    0x10  Code  Wk  stm32f4xx_hal.o [1]
-HAL_Init                 0x801'6691    0x30  Code  Gb  stm32f4xx_hal.o [1]
-HAL_InitTick             0x801'3c75    0x28  Code  Wk  stm32f4xx_hal.o [1]
-HAL_MspInit              0x801'67a5    0x5e  Code  Gb  stm32f4xx_hal_msp.o [1]
-HAL_NVIC_SetPriority     0x801'3d6d    0x2a  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_IncTick              0x801'7f19    0x10  Code  Wk  stm32f4xx_hal.o [1]
+HAL_Init                 0x801'6679    0x30  Code  Gb  stm32f4xx_hal.o [1]
+HAL_InitTick             0x801'3c65    0x28  Code  Wk  stm32f4xx_hal.o [1]
+HAL_MspInit              0x801'678d    0x5e  Code  Gb  stm32f4xx_hal_msp.o [1]
+HAL_NVIC_SetPriority     0x801'3d5d    0x2a  Code  Gb  stm32f4xx_hal_cortex.o [1]
 HAL_NVIC_SetPriorityGrouping
-                         0x801'3d61     0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
+                         0x801'3d51     0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
 HAL_PWREx_EnableOverDrive
-                         0x801'6601    0x84  Code  Gb  stm32f4xx_hal_pwr_ex.o [1]
-HAL_RCC_ClockConfig      0x801'3ad1   0x188  Code  Gb  stm32f4xx_hal_rcc.o [1]
-HAL_RCC_GetHCLKFreq      0x801'3c59     0x6  Code  Gb  stm32f4xx_hal_rcc.o [1]
+                         0x801'65e9    0x84  Code  Gb  stm32f4xx_hal_pwr_ex.o [1]
+HAL_RCC_ClockConfig      0x801'3ac1   0x188  Code  Gb  stm32f4xx_hal_rcc.o [1]
+HAL_RCC_GetHCLKFreq      0x801'3c49     0x6  Code  Gb  stm32f4xx_hal_rcc.o [1]
 HAL_RCC_GetSysClockFreq
                          0x800'd0f9   0x11e  Code  Gb  stm32f4xx_hal_rcc_ex.o [1]
 HAL_RCC_OscConfig        0x800'd221   0x3ac  Code  Gb  stm32f4xx_hal_rcc_ex.o [1]
 HAL_SYSTICK_CLKSourceConfig
-                         0x801'3da3    0x1c  Code  Gb  stm32f4xx_hal_cortex.o [1]
-HAL_SYSTICK_Config       0x801'3d97     0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
+                         0x801'3d93    0x1c  Code  Gb  stm32f4xx_hal_cortex.o [1]
+HAL_SYSTICK_Config       0x801'3d87     0xc  Code  Gb  stm32f4xx_hal_cortex.o [1]
 LL_AHB1_GRP1_EnableClock
                          0x800'a315    0x18  Code  Lc  DisplayApplication.o [1]
 LL_AHB1_GRP1_EnableClock
@@ -745,19 +745,19 @@ LL_USART_SetBaudRate     0x800'cc5b   0x116  Code  Lc  stm32f4xx_ll_usart.o [1]
 LL_USART_SetHWFlowCtrl   0x800'cc4f     0xc  Code  Lc  stm32f4xx_ll_usart.o [1]
 LL_USART_SetStopBitsLength
                          0x800'cc43     0xc  Code  Lc  stm32f4xx_ll_usart.o [1]
-MX_GPIO_Init             0x801'66c5    0xe0  Code  Gb  gpio.o [1]
+MX_GPIO_Init             0x801'66ad    0xe0  Code  Gb  gpio.o [1]
 NVIC_EnableIRQ           0x800'ba69    0x16  Code  Lc  usart1.o [1]
 NVIC_EnableIRQ           0x800'b795    0x16  Code  Lc  usart2.o [1]
 NVIC_EnableIRQ           0x800'be75    0x16  Code  Lc  usart4.o [1]
-NVIC_EncodePriority      0x801'3cf1    0x40  Code  Lc  stm32f4xx_hal_cortex.o [1]
+NVIC_EncodePriority      0x801'3ce1    0x40  Code  Lc  stm32f4xx_hal_cortex.o [1]
 NVIC_GetPriorityGrouping
-                         0x801'3cbb     0xa  Code  Lc  stm32f4xx_hal_cortex.o [1]
-NVIC_SetPriority         0x801'3cc5    0x2c  Code  Lc  stm32f4xx_hal_cortex.o [1]
+                         0x801'3cab     0xa  Code  Lc  stm32f4xx_hal_cortex.o [1]
+NVIC_SetPriority         0x801'3cb5    0x2c  Code  Lc  stm32f4xx_hal_cortex.o [1]
 NVIC_SetPriority         0x800'ba7f    0x2c  Code  Lc  usart1.o [1]
 NVIC_SetPriority         0x800'b7ab    0x2c  Code  Lc  usart2.o [1]
 NVIC_SetPriority         0x800'be8b    0x2c  Code  Lc  usart4.o [1]
 NVIC_SetPriorityGrouping
-                         0x801'3c9d    0x1e  Code  Lc  stm32f4xx_hal_cortex.o [1]
+                         0x801'3c8d    0x1e  Code  Lc  stm32f4xx_hal_cortex.o [1]
 PendSV_Handler           0x800'9da1          Code  Gb  portasm.o [1]
 RCC_GetHCLKClockFreq     0x800'd003    0x18  Code  Gb  stm32f4xx_ll_rcc.o [1]
 RCC_GetPCLK1ClockFreq    0x800'd01b    0x14  Code  Gb  stm32f4xx_ll_rcc.o [1]
@@ -765,21 +765,21 @@ RCC_GetPCLK2ClockFreq    0x800'd02f    0x14  Code  Gb  stm32f4xx_ll_rcc.o [1]
 RCC_GetSystemClockFreq   0x800'cfc9    0x3a  Code  Gb  stm32f4xx_ll_rcc.o [1]
 RCC_PLL_GetFreqDomain_SYS
                          0x800'd043    0x76  Code  Gb  stm32f4xx_ll_rcc.o [1]
-Region$$Table$$Base      0x801'7dd0           --   Gb  - Linker created -
-Region$$Table$$Limit     0x801'7df0           --   Gb  - Linker created -
+Region$$Table$$Base      0x801'7dd4           --   Gb  - Linker created -
+Region$$Table$$Limit     0x801'7df4           --   Gb  - Linker created -
 SVC_Handler              0x800'9df9          Code  Gb  portasm.o [1]
 StartDefaultTask         0x800'ad77    0x76  Code  Gb  DisplayApplication.o [1]
 StartDefaultTask::inputBuffer
                         0x2000'6ee8    0x50  Data  Lc  DisplayApplication.o [1]
-SysTick_Config           0x801'3d31    0x30  Code  Lc  stm32f4xx_hal_cortex.o [1]
-SysTick_Handler          0x801'7f49     0xc  Code  Gb  stm32f4xx_it.o [1]
-SystemClock_Config       0x801'6509    0xd0  Code  Gb  main.o [1]
+SysTick_Config           0x801'3d21    0x30  Code  Lc  stm32f4xx_hal_cortex.o [1]
+SysTick_Handler          0x801'7f4d     0xc  Code  Gb  stm32f4xx_it.o [1]
+SystemClock_Config       0x801'64f1    0xd0  Code  Gb  main.o [1]
 SystemCoreClock         0x2000'00b8     0x4  Data  Gb  system_stm32f4xx.o [1]
-SystemInit               0x801'7bb5    0x40  Code  Gb  system_stm32f4xx.o [1]
+SystemInit               0x801'7b9d    0x40  Code  Gb  system_stm32f4xx.o [1]
 UART4_IRQHandler         0x800'bee3    0x86  Code  Gb  usart4.o [1]
 USART1_IRQHandler        0x800'bad7    0x86  Code  Gb  usart1.o [1]
 USART2_IRQHandler        0x800'b803    0x86  Code  Gb  usart2.o [1]
-_Error_Handler           0x801'65fd     0x2  Code  Gb  main.o [1]
+_Error_Handler           0x801'65e5     0x2  Code  Gb  main.o [1]
 _LocaleC_isalpha         0x800'c733     0xc  Code  Gb  xlocale_c.o [2]
 _LocaleC_islower         0x800'c72d     0x4  Code  Gb  xlocale_c.o [2]
 _LocaleC_ispunct         0x800'c749    0x22  Code  Gb  xlocale_c.o [2]
@@ -793,32 +793,32 @@ __aeabi_memcpy           0x800'bd3d          Code  Gb  ABImemcpy.o [4]
 __aeabi_memcpy4          0x800'bd5d          Code  Gb  ABImemcpy.o [4]
 __aeabi_memcpy8          0x800'bd5d          Code  Gb  ABImemcpy.o [4]
 __aeabi_memset           0x800'925d          Code  Gb  ABImemset.o [4]
-__cmain                  0x801'7df1          Code  Gb  cmain.o [4]
-__exit                   0x801'7e25          Code  Gb  XXexit.o [4]
+__cmain                  0x801'7df5          Code  Gb  cmain.o [4]
+__exit                   0x801'7e29          Code  Gb  XXexit.o [4]
 __iar_Memchr             0x800'c6b1          Code  Gb  memchr.o [4]
 __iar_Memset             0x800'925d          Code  Gb  ABImemset.o [4]
 __iar_Memset_word        0x800'9265          Code  Gb  ABImemset.o [4]
 __iar_Stoulx             0x800'b091   0x13a  Code  Gb  iar_Stoulx.o [2]
-__iar_data_init3         0x801'7d3d    0x28  Code  Gb  data_init.o [4]
+__iar_data_init3         0x801'7d65    0x28  Code  Gb  data_init.o [4]
 __iar_globLocale        0x2000'00bc    0x48  Data  Lc  xlocale_c.o [2]
 __iar_global_Locale      0x800'c797     0x4  Code  Gb  xlocale_c.o [2]
-__iar_init_vfp           0x801'7dad          Code  Gb  fpinit_M.o [3]
+__iar_init_vfp           0x801'7db1          Code  Gb  fpinit_M.o [3]
 __iar_lz77_init_single3
-                         0x801'7a05    0x78  Code  Gb  lz77_init_single.o [4]
-__iar_program_start      0x801'7f55          Code  Gb  cstartup_M.o [4]
+                         0x801'79ed    0x78  Code  Gb  lz77_init_single.o [4]
+__iar_program_start      0x801'7f59          Code  Gb  cstartup_M.o [4]
 __iar_zero_init3         0x800'92c3    0x3a  Code  Gb  zero_init3.o [4]
-__low_level_init         0x801'7e0f     0x4  Code  Gb  low_level_init.o [2]
+__low_level_init         0x801'7e13     0x4  Code  Gb  low_level_init.o [2]
 __vector_table           0x800'0000          Data  Gb  startup_stm32f446xx.o [1]
-_call_main               0x801'7dfd          Code  Gb  cmain.o [4]
+_call_main               0x801'7e01          Code  Gb  cmain.o [4]
 _displayBuffer          0x2000'3d08  0x2800  Data  Gb  DisplayDriver.o [1]
-_exit                    0x801'7e19          Code  Gb  cexit.o [4]
-_main                    0x801'7e0b          Code  Gb  cmain.o [4]
+_exit                    0x801'7e1d          Code  Gb  cexit.o [4]
+_main                    0x801'7e0f          Code  Gb  cmain.o [4]
 addCRC16                 0x800'af7d    0x1e  Code  Gb  crc.o [1]
 atoi                     0x800'b1d1     0x2  Code  Gb  iar_Stoulx.o [2]
 bank                    0x2000'7100     0x4  Data  Gb  DisplayDriver.o [1]
 bigL                     0x800'dcd4   0x240  Data  Gb  Fonts.o [1]
-bigLetters               0x801'7ae4    0x68  Data  Gb  Fonts.o [1]
-bigLetters64             0x801'7b4c    0x68  Data  Gb  Fonts.o [1]
+bigLetters               0x801'7acc    0x68  Data  Gb  Fonts.o [1]
+bigLetters64             0x801'7b34    0x68  Data  Gb  Fonts.o [1]
 bigP                     0x800'd854   0x240  Data  Gb  Fonts.o [1]
 bigW                     0x800'da94   0x240  Data  Gb  Fonts.o [1]
 breakIcon                0x800'e814   0x240  Data  Gb  Fonts.o [1]
@@ -834,101 +834,101 @@ computeCRC               0x800'aebd    0x8c  Code  Gb  crc.o [1]
 currentMode             0x2000'0000     0x4  Data  Gb  DisplayDriver.o [1]
 currentWriteAddress     0x2000'7104     0x4  Data  Lc  FlashInterface.o [1]
 defaultTaskHandle       0x2000'70cc     0x4  Data  Gb  DisplayApplication.o [1]
-digit0                   0x800'ecd0   0x200  Data  Gb  Fonts.o [1]
-digit1                   0x800'eed0   0x200  Data  Gb  Fonts.o [1]
-digit2                   0x800'f0d0   0x200  Data  Gb  Fonts.o [1]
-digit3                   0x800'f2d0   0x200  Data  Gb  Fonts.o [1]
-digit4                   0x800'f4d0   0x200  Data  Gb  Fonts.o [1]
-digit5                   0x800'f6d0   0x200  Data  Gb  Fonts.o [1]
-digit6                   0x800'f8d0   0x200  Data  Gb  Fonts.o [1]
-digit7                   0x800'fad0   0x200  Data  Gb  Fonts.o [1]
-digit8                   0x800'fcd0   0x200  Data  Gb  Fonts.o [1]
-digit9                   0x800'fed0   0x200  Data  Gb  Fonts.o [1]
-digitA                   0x801'00d0   0x200  Data  Gb  Fonts.o [1]
-digitB                   0x801'02d0   0x200  Data  Gb  Fonts.o [1]
-digitC                   0x801'04d0   0x200  Data  Gb  Fonts.o [1]
-digitD                   0x801'06d0   0x200  Data  Gb  Fonts.o [1]
-digitE                   0x801'08d0   0x200  Data  Gb  Fonts.o [1]
-digitF                   0x801'0ad0   0x200  Data  Gb  Fonts.o [1]
-digitG                   0x801'0cd0   0x200  Data  Gb  Fonts.o [1]
-digitH                   0x801'0ed0   0x200  Data  Gb  Fonts.o [1]
-digitI                   0x801'10d0   0x200  Data  Gb  Fonts.o [1]
-digitJ                   0x801'12d0   0x200  Data  Gb  Fonts.o [1]
-digitK                   0x801'14d0   0x200  Data  Gb  Fonts.o [1]
-digitL                   0x801'16d0   0x200  Data  Gb  Fonts.o [1]
-digitM                   0x801'18d0   0x200  Data  Gb  Fonts.o [1]
-digitN                   0x801'1ad0   0x200  Data  Gb  Fonts.o [1]
-digitO                   0x801'1cd0   0x200  Data  Gb  Fonts.o [1]
-digitP                   0x801'1ed0   0x200  Data  Gb  Fonts.o [1]
-digitQ                   0x801'20d0   0x200  Data  Gb  Fonts.o [1]
-digitR                   0x801'22d0   0x200  Data  Gb  Fonts.o [1]
-digitS                   0x801'24d0   0x200  Data  Gb  Fonts.o [1]
-digitT                   0x801'26d0   0x200  Data  Gb  Fonts.o [1]
-digitU                   0x801'28d0   0x200  Data  Gb  Fonts.o [1]
-digitV                   0x801'2ad0   0x200  Data  Gb  Fonts.o [1]
-digitW                   0x801'2cd0   0x200  Data  Gb  Fonts.o [1]
-digitX                   0x801'2ed0   0x200  Data  Gb  Fonts.o [1]
-digitY                   0x801'30d0   0x200  Data  Gb  Fonts.o [1]
-digitZ                   0x801'32d0   0x200  Data  Gb  Fonts.o [1]
-digits                   0x801'7cec    0x28  Data  Gb  Fonts.o [1]
-digits                   0x801'7c3c    0x28  Data  Lc  iar_Stoulx.o [2]
-digits64                 0x801'7d14    0x28  Data  Gb  Fonts.o [1]
+digit0                   0x800'ecc0   0x200  Data  Gb  Fonts.o [1]
+digit1                   0x800'eec0   0x200  Data  Gb  Fonts.o [1]
+digit2                   0x800'f0c0   0x200  Data  Gb  Fonts.o [1]
+digit3                   0x800'f2c0   0x200  Data  Gb  Fonts.o [1]
+digit4                   0x800'f4c0   0x200  Data  Gb  Fonts.o [1]
+digit5                   0x800'f6c0   0x200  Data  Gb  Fonts.o [1]
+digit6                   0x800'f8c0   0x200  Data  Gb  Fonts.o [1]
+digit7                   0x800'fac0   0x200  Data  Gb  Fonts.o [1]
+digit8                   0x800'fcc0   0x200  Data  Gb  Fonts.o [1]
+digit9                   0x800'fec0   0x200  Data  Gb  Fonts.o [1]
+digitA                   0x801'00c0   0x200  Data  Gb  Fonts.o [1]
+digitB                   0x801'02c0   0x200  Data  Gb  Fonts.o [1]
+digitC                   0x801'04c0   0x200  Data  Gb  Fonts.o [1]
+digitD                   0x801'06c0   0x200  Data  Gb  Fonts.o [1]
+digitE                   0x801'08c0   0x200  Data  Gb  Fonts.o [1]
+digitF                   0x801'0ac0   0x200  Data  Gb  Fonts.o [1]
+digitG                   0x801'0cc0   0x200  Data  Gb  Fonts.o [1]
+digitH                   0x801'0ec0   0x200  Data  Gb  Fonts.o [1]
+digitI                   0x801'10c0   0x200  Data  Gb  Fonts.o [1]
+digitJ                   0x801'12c0   0x200  Data  Gb  Fonts.o [1]
+digitK                   0x801'14c0   0x200  Data  Gb  Fonts.o [1]
+digitL                   0x801'16c0   0x200  Data  Gb  Fonts.o [1]
+digitM                   0x801'18c0   0x200  Data  Gb  Fonts.o [1]
+digitN                   0x801'1ac0   0x200  Data  Gb  Fonts.o [1]
+digitO                   0x801'1cc0   0x200  Data  Gb  Fonts.o [1]
+digitP                   0x801'1ec0   0x200  Data  Gb  Fonts.o [1]
+digitQ                   0x801'20c0   0x200  Data  Gb  Fonts.o [1]
+digitR                   0x801'22c0   0x200  Data  Gb  Fonts.o [1]
+digitS                   0x801'24c0   0x200  Data  Gb  Fonts.o [1]
+digitT                   0x801'26c0   0x200  Data  Gb  Fonts.o [1]
+digitU                   0x801'28c0   0x200  Data  Gb  Fonts.o [1]
+digitV                   0x801'2ac0   0x200  Data  Gb  Fonts.o [1]
+digitW                   0x801'2cc0   0x200  Data  Gb  Fonts.o [1]
+digitX                   0x801'2ec0   0x200  Data  Gb  Fonts.o [1]
+digitY                   0x801'30c0   0x200  Data  Gb  Fonts.o [1]
+digitZ                   0x801'32c0   0x200  Data  Gb  Fonts.o [1]
+digits                   0x801'7d14    0x28  Data  Gb  Fonts.o [1]
+digits                   0x801'7c24    0x28  Data  Lc  iar_Stoulx.o [2]
+digits64                 0x801'7d3c    0x28  Data  Gb  Fonts.o [1]
 displayBufferOneEighthScan
                         0x2000'006c     0x4  Data  Gb  DisplayDriver.o [1]
 displayBufferOneSixtenthScan
                         0x2000'0070     0x4  Data  Gb  DisplayDriver.o [1]
 displayMode             0x2000'0004     0x8  Data  Gb  DisplayDriver.o [1]
 displayModes            0x2000'000c    0x60  Data  Gb  DisplayDriver.o [1]
-doFly                    0x801'36d0   0x200  Data  Gb  Fonts.o [1]
-dontFly                  0x801'34d0   0x200  Data  Gb  Fonts.o [1]
+doFly                    0x801'36c0   0x200  Data  Gb  Fonts.o [1]
+dontFly                  0x801'34c0   0x200  Data  Gb  Fonts.o [1]
 drawFrame               0x2000'0104     0x1  Data  Gb  Fonts.o [1]
 drivePixelsOut2x5        0x800'8c7f    0x34  Code  Gb  DisplayDriver.o [1]
-eight                    0x801'6308   0x100  Data  Gb  Fonts.o [1]
+eight                    0x801'62f0   0x100  Data  Gb  Fonts.o [1]
 eraseParameters          0x800'afe5    0x10  Code  Gb  FlashInterface.o [1]
-exit                     0x801'7e13     0x4  Code  Gb  exit.o [2]
+exit                     0x801'7e17     0x4  Code  Gb  exit.o [2]
 extractData              0x800'a409    0xb4  Code  Gb  DisplayApplication.o [1]
-five                     0x801'6008   0x100  Data  Gb  Fonts.o [1]
+five                     0x801'5ff0   0x100  Data  Gb  Fonts.o [1]
 flight                  0x2000'70ec     0x4  Data  Gb  DisplayApplication.o [1]
-flip                     0x801'3ddc   0x100  Data  Gb  crc.o [1]
-four                     0x801'5f08   0x100  Data  Gb  Fonts.o [1]
-halfBigLetters           0x801'7a7c    0x68  Data  Gb  Fonts.o [1]
-halfDigits               0x801'7cc4    0x28  Data  Gb  Fonts.o [1]
-halfbigA                 0x801'6d04    0x80  Data  Gb  Fonts.o [1]
-halfbigB                 0x801'6d84    0x80  Data  Gb  Fonts.o [1]
-halfbigC                 0x801'6e04    0x80  Data  Gb  Fonts.o [1]
-halfbigD                 0x801'6e84    0x80  Data  Gb  Fonts.o [1]
-halfbigE                 0x801'6f04    0x80  Data  Gb  Fonts.o [1]
-halfbigF                 0x801'6f84    0x80  Data  Gb  Fonts.o [1]
-halfbigG                 0x801'7004    0x80  Data  Gb  Fonts.o [1]
-halfbigH                 0x801'7084    0x80  Data  Gb  Fonts.o [1]
-halfbigI                 0x801'7104    0x80  Data  Gb  Fonts.o [1]
-halfbigJ                 0x801'7184    0x80  Data  Gb  Fonts.o [1]
-halfbigK                 0x801'7204    0x80  Data  Gb  Fonts.o [1]
-halfbigL                 0x801'7284    0x80  Data  Gb  Fonts.o [1]
-halfbigM                 0x801'7304    0x80  Data  Gb  Fonts.o [1]
-halfbigN                 0x801'7384    0x80  Data  Gb  Fonts.o [1]
-halfbigO                 0x801'7404    0x80  Data  Gb  Fonts.o [1]
-halfbigP                 0x801'7484    0x80  Data  Gb  Fonts.o [1]
-halfbigQ                 0x801'7504    0x80  Data  Gb  Fonts.o [1]
-halfbigR                 0x801'7584    0x80  Data  Gb  Fonts.o [1]
-halfbigS                 0x801'7604    0x80  Data  Gb  Fonts.o [1]
-halfbigT                 0x801'7684    0x80  Data  Gb  Fonts.o [1]
-halfbigU                 0x801'7704    0x80  Data  Gb  Fonts.o [1]
-halfbigV                 0x801'7784    0x80  Data  Gb  Fonts.o [1]
-halfbigW                 0x801'7804    0x80  Data  Gb  Fonts.o [1]
-halfbigX                 0x801'7884    0x80  Data  Gb  Fonts.o [1]
-halfbigY                 0x801'7904    0x80  Data  Gb  Fonts.o [1]
-halfbigZ                 0x801'7984    0x80  Data  Gb  Fonts.o [1]
-halfeight                0x801'6c04    0x80  Data  Gb  Fonts.o [1]
-halffive                 0x801'6a84    0x80  Data  Gb  Fonts.o [1]
-halffour                 0x801'6a04    0x80  Data  Gb  Fonts.o [1]
-halfnine                 0x801'6c84    0x80  Data  Gb  Fonts.o [1]
-halfone                  0x801'6884    0x80  Data  Gb  Fonts.o [1]
-halfseven                0x801'6b84    0x80  Data  Gb  Fonts.o [1]
-halfsix                  0x801'6b04    0x80  Data  Gb  Fonts.o [1]
-halfthree                0x801'6984    0x80  Data  Gb  Fonts.o [1]
-halftwo                  0x801'6904    0x80  Data  Gb  Fonts.o [1]
-halfzero                 0x801'6804    0x80  Data  Gb  Fonts.o [1]
+flip                     0x801'3dcc   0x100  Data  Gb  crc.o [1]
+four                     0x801'5ef0   0x100  Data  Gb  Fonts.o [1]
+halfBigLetters           0x801'7a64    0x68  Data  Gb  Fonts.o [1]
+halfDigits               0x801'7cec    0x28  Data  Gb  Fonts.o [1]
+halfbigA                 0x801'6cec    0x80  Data  Gb  Fonts.o [1]
+halfbigB                 0x801'6d6c    0x80  Data  Gb  Fonts.o [1]
+halfbigC                 0x801'6dec    0x80  Data  Gb  Fonts.o [1]
+halfbigD                 0x801'6e6c    0x80  Data  Gb  Fonts.o [1]
+halfbigE                 0x801'6eec    0x80  Data  Gb  Fonts.o [1]
+halfbigF                 0x801'6f6c    0x80  Data  Gb  Fonts.o [1]
+halfbigG                 0x801'6fec    0x80  Data  Gb  Fonts.o [1]
+halfbigH                 0x801'706c    0x80  Data  Gb  Fonts.o [1]
+halfbigI                 0x801'70ec    0x80  Data  Gb  Fonts.o [1]
+halfbigJ                 0x801'716c    0x80  Data  Gb  Fonts.o [1]
+halfbigK                 0x801'71ec    0x80  Data  Gb  Fonts.o [1]
+halfbigL                 0x801'726c    0x80  Data  Gb  Fonts.o [1]
+halfbigM                 0x801'72ec    0x80  Data  Gb  Fonts.o [1]
+halfbigN                 0x801'736c    0x80  Data  Gb  Fonts.o [1]
+halfbigO                 0x801'73ec    0x80  Data  Gb  Fonts.o [1]
+halfbigP                 0x801'746c    0x80  Data  Gb  Fonts.o [1]
+halfbigQ                 0x801'74ec    0x80  Data  Gb  Fonts.o [1]
+halfbigR                 0x801'756c    0x80  Data  Gb  Fonts.o [1]
+halfbigS                 0x801'75ec    0x80  Data  Gb  Fonts.o [1]
+halfbigT                 0x801'766c    0x80  Data  Gb  Fonts.o [1]
+halfbigU                 0x801'76ec    0x80  Data  Gb  Fonts.o [1]
+halfbigV                 0x801'776c    0x80  Data  Gb  Fonts.o [1]
+halfbigW                 0x801'77ec    0x80  Data  Gb  Fonts.o [1]
+halfbigX                 0x801'786c    0x80  Data  Gb  Fonts.o [1]
+halfbigY                 0x801'78ec    0x80  Data  Gb  Fonts.o [1]
+halfbigZ                 0x801'796c    0x80  Data  Gb  Fonts.o [1]
+halfeight                0x801'6bec    0x80  Data  Gb  Fonts.o [1]
+halffive                 0x801'6a6c    0x80  Data  Gb  Fonts.o [1]
+halffour                 0x801'69ec    0x80  Data  Gb  Fonts.o [1]
+halfnine                 0x801'6c6c    0x80  Data  Gb  Fonts.o [1]
+halfone                  0x801'686c    0x80  Data  Gb  Fonts.o [1]
+halfseven                0x801'6b6c    0x80  Data  Gb  Fonts.o [1]
+halfsix                  0x801'6aec    0x80  Data  Gb  Fonts.o [1]
+halfthree                0x801'696c    0x80  Data  Gb  Fonts.o [1]
+halftwo                  0x801'68ec    0x80  Data  Gb  Fonts.o [1]
+halfzero                 0x801'67ec    0x80  Data  Gb  Fonts.o [1]
 heat                    0x2000'70e8     0x4  Data  Gb  DisplayApplication.o [1]
 hourGlassIcon            0x800'e5d4   0x240  Data  Gb  Fonts.o [1]
 incrementMode            0x800'81b7    0x4e  Code  Gb  DisplayDriver.o [1]
@@ -939,17 +939,17 @@ isalpha                  0x800'd0d1    0x14  Code  Gb  isalpha.o [2]
 isprint                  0x800'cf05    0x28  Code  Gb  isprint.o [2]
 ispunct                  0x800'd0e5    0x14  Code  Gb  ispunct.o [2]
 isspace                  0x800'c689    0x14  Code  Gb  isspace.o [2]
-land                     0x801'38d0   0x200  Data  Gb  Fonts.o [1]
+land                     0x801'38c0   0x200  Data  Gb  Fonts.o [1]
 letterOffsets           0x2000'0084    0x14  Data  Gb  Fonts.o [1]
 letterOffsetsSmall      0x2000'0098    0x1c  Data  Gb  Fonts.o [1]
-main                     0x801'65e5    0x18  Code  Gb  main.o [1]
+main                     0x801'65cd    0x18  Code  Gb  main.o [1]
 makeFreeRtosPriority     0x800'bde5    0x16  Code  Lc  cmsis_os.o [1]
 memchr                   0x800'c6b1          Code  Gb  memchr.o [4]
 minusIcon                0x800'df14   0x240  Data  Gb  Fonts.o [1]
 minutes                 0x2000'70fc     0x4  Data  Gb  DisplayDriver.o [1]
-ndigs                    0x801'7c14    0x28  Data  Lc  iar_Stoulx.o [2]
-nine                     0x801'6408   0x100  Data  Gb  Fonts.o [1]
-one                      0x801'5c08   0x100  Data  Gb  Fonts.o [1]
+ndigs                    0x801'7bfc    0x28  Data  Lc  iar_Stoulx.o [2]
+nine                     0x801'63f0   0x100  Data  Gb  Fonts.o [1]
+one                      0x801'5bf0   0x100  Data  Gb  Fonts.o [1]
 osKernelStart            0x800'bdfb     0xa  Code  Gb  cmsis_os.o [1]
 osSystickHandler         0x800'be65    0x10  Code  Gb  cmsis_os.o [1]
 osThreadCreate           0x800'be05    0x60  Code  Gb  cmsis_os.o [1]
@@ -957,7 +957,7 @@ outputRow                0x800'8cc1    0xc6  Code  Gb  DisplayDriver.o [1]
 pFlash                  0x2000'6fa4    0x20  Data  Gb  stm32f4xx_hal_flash.o [1]
 parseCommand             0x800'a97d   0x374  Code  Gb  DisplayApplication.o [1]
 pcInterruptPriorityRegisters
-                         0x801'7f74     0x4  Data  Lc  port.o [1]
+                         0x801'7f78     0x4  Data  Lc  port.o [1]
 phase                   0x2000'70dc     0x4  Data  Gb  DisplayApplication.o [1]
 plusIcon                 0x800'e154   0x240  Data  Gb  Fonts.o [1]
 prvAddCurrentTaskToDelayedList
@@ -1034,8 +1034,8 @@ receiverTask::inputBuffer
                         0x2000'6e98    0x50  Data  Lc  DisplayApplication.o [1]
 receiverTaskHandle      0x2000'70d0     0x4  Data  Gb  DisplayApplication.o [1]
 recoverMode              0x800'a33f    0x2e  Code  Gb  DisplayApplication.o [1]
-remainderHigh            0x801'3edc   0x100  Data  Gb  crc.o [1]
-remainderLow             0x801'3fdc   0x100  Data  Gb  crc.o [1]
+remainderHigh            0x801'3ecc   0x100  Data  Gb  crc.o [1]
+remainderLow             0x801'3fcc   0x100  Data  Gb  crc.o [1]
 round                   0x2000'70e4     0x4  Data  Gb  DisplayApplication.o [1]
 sGPIOInitStructure      0x2000'7034    0x18  Data  Lc  gpioapi.o [1]
 scannerTask              0x800'8ee5   0x10a  Code  Gb  DisplayDriver.o [1]
@@ -1048,49 +1048,49 @@ setMode                  0x800'8169    0x4e  Code  Gb  DisplayDriver.o [1]
 setupAlternateColors     0x800'8057    0x26  Code  Gb  DisplayDriver.o [1]
 setupColors              0x800'8031    0x26  Code  Gb  DisplayDriver.o [1]
 setupPixelPutFunction    0x800'807d    0xec  Code  Gb  DisplayDriver.o [1]
-seven                    0x801'6208   0x100  Data  Gb  Fonts.o [1]
+seven                    0x801'61f0   0x100  Data  Gb  Fonts.o [1]
 showData                 0x800'a4c5   0x300  Code  Gb  DisplayApplication.o [1]
 showFrame               0x2000'7190     0x1  Data  Gb  Fonts.o [1]
 showRoundAndHeat         0x800'a7c5    0x9c  Code  Gb  DisplayApplication.o [1]
 showTimeOnly             0x800'a861   0x11c  Code  Gb  DisplayApplication.o [1]
-six                      0x801'6108   0x100  Data  Gb  Fonts.o [1]
-smallA                   0x801'4108   0x100  Data  Gb  Fonts.o [1]
-smallB                   0x801'4208   0x100  Data  Gb  Fonts.o [1]
-smallC                   0x801'4308   0x100  Data  Gb  Fonts.o [1]
-smallD                   0x801'4408   0x100  Data  Gb  Fonts.o [1]
-smallDot                 0x801'7d88    0x24  Data  Gb  Fonts.o [1]
-smallE                   0x801'4508   0x100  Data  Gb  Fonts.o [1]
-smallF                   0x801'4608   0x100  Data  Gb  Fonts.o [1]
-smallG                   0x801'4708   0x100  Data  Gb  Fonts.o [1]
-smallH                   0x801'4808   0x100  Data  Gb  Fonts.o [1]
-smallI                   0x801'4908   0x100  Data  Gb  Fonts.o [1]
-smallJ                   0x801'4a08   0x100  Data  Gb  Fonts.o [1]
-smallK                   0x801'4b08   0x100  Data  Gb  Fonts.o [1]
-smallL                   0x801'4c08   0x100  Data  Gb  Fonts.o [1]
-smallM                   0x801'4d08   0x100  Data  Gb  Fonts.o [1]
-smallN                   0x801'4e08   0x100  Data  Gb  Fonts.o [1]
-smallO                   0x801'4f08   0x100  Data  Gb  Fonts.o [1]
-smallP                   0x801'5008   0x100  Data  Gb  Fonts.o [1]
-smallQ                   0x801'5108   0x100  Data  Gb  Fonts.o [1]
-smallR                   0x801'5208   0x100  Data  Gb  Fonts.o [1]
-smallS                   0x801'5308   0x100  Data  Gb  Fonts.o [1]
-smallT                   0x801'5408   0x100  Data  Gb  Fonts.o [1]
-smallU                   0x801'5508   0x100  Data  Gb  Fonts.o [1]
-smallV                   0x801'5608   0x100  Data  Gb  Fonts.o [1]
-smallW                   0x801'5708   0x100  Data  Gb  Fonts.o [1]
-smallX                   0x801'5808   0x100  Data  Gb  Fonts.o [1]
-smallY                   0x801'5908   0x100  Data  Gb  Fonts.o [1]
-smallZ                   0x801'5a08   0x100  Data  Gb  Fonts.o [1]
+six                      0x801'60f0   0x100  Data  Gb  Fonts.o [1]
+smallA                   0x801'40f0   0x100  Data  Gb  Fonts.o [1]
+smallB                   0x801'41f0   0x100  Data  Gb  Fonts.o [1]
+smallC                   0x801'42f0   0x100  Data  Gb  Fonts.o [1]
+smallD                   0x801'43f0   0x100  Data  Gb  Fonts.o [1]
+smallDot                 0x801'7d8c    0x24  Data  Gb  Fonts.o [1]
+smallE                   0x801'44f0   0x100  Data  Gb  Fonts.o [1]
+smallF                   0x801'45f0   0x100  Data  Gb  Fonts.o [1]
+smallG                   0x801'46f0   0x100  Data  Gb  Fonts.o [1]
+smallH                   0x801'47f0   0x100  Data  Gb  Fonts.o [1]
+smallI                   0x801'48f0   0x100  Data  Gb  Fonts.o [1]
+smallJ                   0x801'49f0   0x100  Data  Gb  Fonts.o [1]
+smallK                   0x801'4af0   0x100  Data  Gb  Fonts.o [1]
+smallL                   0x801'4bf0   0x100  Data  Gb  Fonts.o [1]
+smallM                   0x801'4cf0   0x100  Data  Gb  Fonts.o [1]
+smallN                   0x801'4df0   0x100  Data  Gb  Fonts.o [1]
+smallO                   0x801'4ef0   0x100  Data  Gb  Fonts.o [1]
+smallP                   0x801'4ff0   0x100  Data  Gb  Fonts.o [1]
+smallQ                   0x801'50f0   0x100  Data  Gb  Fonts.o [1]
+smallR                   0x801'51f0   0x100  Data  Gb  Fonts.o [1]
+smallS                   0x801'52f0   0x100  Data  Gb  Fonts.o [1]
+smallT                   0x801'53f0   0x100  Data  Gb  Fonts.o [1]
+smallU                   0x801'54f0   0x100  Data  Gb  Fonts.o [1]
+smallV                   0x801'55f0   0x100  Data  Gb  Fonts.o [1]
+smallW                   0x801'56f0   0x100  Data  Gb  Fonts.o [1]
+smallX                   0x801'57f0   0x100  Data  Gb  Fonts.o [1]
+smallY                   0x801'58f0   0x100  Data  Gb  Fonts.o [1]
+smallZ                   0x801'59f0   0x100  Data  Gb  Fonts.o [1]
 startDisplayDriver       0x800'aded    0x48  Code  Gb  DisplayApplication.o [1]
 stopIcon                 0x800'e394   0x240  Data  Gb  Fonts.o [1]
 strcspn                  0x800'c667    0x22  Code  Gb  strcspn.o [2]
 strspn                   0x800'c645    0x22  Code  Gb  strspn.o [2]
 strtok                   0x800'b045    0x4c  Code  Gb  strtok.o [2]
-symbols                  0x801'7d64    0x24  Data  Gb  Fonts.o [1]
-three                    0x801'5e08   0x100  Data  Gb  Fonts.o [1]
+symbols                  0x801'40cc    0x24  Data  Gb  Fonts.o [1]
+three                    0x801'5df0   0x100  Data  Gb  Fonts.o [1]
 tolower                  0x800'c69d    0x14  Code  Gb  tolower.o [2]
 toupper                  0x800'b781    0x14  Code  Gb  toupper.o [2]
-two                      0x801'5d08   0x100  Data  Gb  Fonts.o [1]
+two                      0x801'5cf0   0x100  Data  Gb  Fonts.o [1]
 uart1Getch               0x800'bcbd    0x1e  Code  Gb  usart1.o [1]
 uart1GetchTO             0x800'bbfb    0x82  Code  Gb  usart1.o [1]
 uart1Gets                0x800'bcdb    0x60  Code  Gb  usart1.o [1]
@@ -1160,15 +1160,15 @@ vTaskSuspendAll          0x800'9769     0xc  Code  Gb  tasks.o [1]
 vTaskSwitchContext       0x800'9977    0x6e  Code  Gb  tasks.o [1]
 windowIcon               0x800'ea54   0x240  Data  Gb  Fonts.o [1]
 writeFlash               0x800'aff5    0x40  Code  Gb  FlashInterface.o [1]
-x1Delta                  0x801'40dc    0x2c  Data  Gb  DisplayDriver.o [1]
-x2Delta                  0x801'7ed0    0x14  Data  Gb  DisplayDriver.o [1]
-x3Delta                  0x801'7c64    0x30  Data  Gb  DisplayDriver.o [1]
-x4Delta                  0x801'7c94    0x30  Data  Gb  DisplayDriver.o [1]
+x1Delta                  0x800'ec94    0x2c  Data  Gb  DisplayDriver.o [1]
+x2Delta                  0x801'7ed4    0x14  Data  Gb  DisplayDriver.o [1]
+x3Delta                  0x801'7c8c    0x30  Data  Gb  DisplayDriver.o [1]
+x4Delta                  0x801'7cbc    0x30  Data  Gb  DisplayDriver.o [1]
 xBlockAllocatedBit      0x2000'7114     0x4  Data  Lc  heap_4.o [1]
 xDelayedTaskList1       0x2000'7060    0x14  Data  Lc  tasks.o [1]
 xDelayedTaskList2       0x2000'7074    0x14  Data  Lc  tasks.o [1]
 xFreeBytesRemaining     0x2000'710c     0x4  Data  Lc  heap_4.o [1]
-xHeapStructSize          0x801'7f70     0x4  Data  Lc  heap_4.o [1]
+xHeapStructSize          0x801'7f74     0x4  Data  Lc  heap_4.o [1]
 xIdleTaskHandle         0x2000'7154     0x4  Data  Lc  tasks.o [1]
 xMaximum                0x2000'0074     0x4  Data  Lc  DisplayDriver.o [1]
 xMaximumSmallDisplay    0x2000'007c     0x4  Data  Lc  DisplayDriver.o [1]
@@ -1203,16 +1203,16 @@ xTickCount              0x2000'7134     0x4  Data  Lc  tasks.o [1]
 xYieldPending           0x2000'7144     0x4  Data  Lc  tasks.o [1]
 yMaximum                0x2000'0078     0x4  Data  Lc  DisplayDriver.o [1]
 yMaximumSmallDisplay    0x2000'0080     0x4  Data  Lc  DisplayDriver.o [1]
-zero                     0x801'5b08   0x100  Data  Gb  Fonts.o [1]
+zero                     0x801'5af0   0x100  Data  Gb  Fonts.o [1]
 
 
-[1] = C:\Work\TimerOpenSource\Display\BigDisplay2019\EWARM\BigDisplay2019\Obj
+[1] = C:\Work\TimerOpenSource\BigClockOS\BigDisplay2019\EWARM\BigDisplay2019\Obj
 [2] = dl7M_tlf.a
 [3] = m7M_tls.a
 [4] = rt7M_tl.a
 
   25'370 bytes of readonly  code memory
-  40'981 bytes of readonly  data memory
+  40'985 bytes of readonly  data memory
   30'095 bytes of readwrite data memory
 
 Errors: none
