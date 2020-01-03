@@ -1,4 +1,18 @@
 /**
+ * No warrantees or liability is assumed with this software. 
+ * This software is the property of Charles M. Nowell, Jr. 
+ * It is placed in the public domain for personal use only. 
+ * All commercial rights are reserved. 
+ * You may use this software to make a display(s) for yourself 
+ * or for a model club. You may not use this software to make a 
+ * product for sale, whether for profit or not. 
+ * Charles M. Nowell, Jr 
+ * 2-Jan-2020 
+ * mickeysbigtimer@gmail.com 
+ *  
+ */
+
+/**
  * Display Application 
  * 
  *  
@@ -374,6 +388,7 @@ void showData(uint32_t minutes, uint32_t seconds, uint32_t round, uint32_t heat,
          putHalfBigValue(flight,16,10,INFO_COLOR);
       }
    }
+   primeTheBuffer(true);
 }
 
 /**
@@ -411,6 +426,8 @@ void showRoundAndHeat(uint32_t round, uint32_t heat,uint32_t color)
          putValue(round / 10,TENS_OF_SMALL_MINUTES_PLACE,color);
       }
    }
+   primeTheBuffer(true);
+
 }
 
 /**
@@ -457,6 +474,7 @@ void showTimeOnly(uint32_t minutes, uint32_t seconds,uint32_t color)
          putValue(minutes / 10,TENS_OF_SMALL_MINUTES_PLACE,color);
       }
    }
+   primeTheBuffer(true);
 }
 
 
@@ -528,7 +546,6 @@ void parseCommand(char *inputBuffer)
                {
                   showData(minutes,seconds,round,heat + 'A',flight,FLY_TOP,YELLOW);
                }
-
                changeImagePlane();
                break;
             case 'W':
@@ -597,8 +614,6 @@ void parseCommand(char *inputBuffer)
                   showRoundAndHeat(round,heat,WHITE);
                   changeImagePlane();
                   break;
-
-
             }
          }
          break;
@@ -627,9 +642,6 @@ void radioReceiverTask(void const *argument)
 {
    static char inputBuffer[80];
    uart2Init(9600);
-   // uint8_t value;
-   // volatile int32_t start,stop,delta;
-   INITGPIOOUT(RS485RX);
    while(1)
    {
       uart2Gets((uint8_t *)inputBuffer);
@@ -655,6 +667,8 @@ void receiverTask(void const *argument)
 
    // Enable RS485 Receive.
    INITGPIOOUT(RS485RX);
+   // Disable transmit
+   INITGPIOOUT(RS485TX);
    uart1Init(9600);
 
    if(!recoverMode())

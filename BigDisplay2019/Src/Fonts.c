@@ -51,6 +51,7 @@ uint32_t colors[8];
 // Keep up with the drawing frame and the displayed frame.
 uint8_t drawFrame = 1;
 uint8_t showFrame = 0;
+volatile bool    bufferIsPrimed = true;
 
 
 /**
@@ -2034,12 +2035,20 @@ void putBigLetter64(uint8_t value,uint8_t position,uint8_t color)
 void changeImagePlane(void)
 {
 
-   showFrame ^= 1;
-   drawFrame ^= 1;
+   if(bufferIsPrimed)
+   {
+      showFrame ^= 1;
+      drawFrame ^= 1;
+      bufferIsPrimed = false;
+   }
 
 }
 
 
+void primeTheBuffer(bool value)
+{
+   bufferIsPrimed = value;
+}
 
 
 
@@ -2068,6 +2077,7 @@ void paintRound(uint8_t round,uint8_t heat)
    }
    putRoundValue(round % 10,1,WHITE);
    putBigLetter(heat - 'A',2,WHITE);
+   primeTheBuffer(true);
 }
 
 
@@ -2091,6 +2101,8 @@ void paintRound64(uint8_t round,uint8_t heat,uint32_t color)
    }
    putRoundValue64(round % 10,2,color);
    putBigLetter64(heat - 'A',3,color);
+   primeTheBuffer(true);
+
 }
 
 

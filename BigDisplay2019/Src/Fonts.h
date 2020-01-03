@@ -131,6 +131,8 @@ void putValue(uint8_t value,uint8_t position,uint8_t color);
 void putValueXY(uint8_t value,uint32_t x, uint32_t y,uint8_t color);
 void putValue64(uint8_t value,uint8_t position,uint8_t color);
 void changeImagePlane(void);
+void primeTheBuffer(bool value);
+
 void putLittleRoundHeat(uint32_t roundValue,uint32_t heatValue);
 void putHalfBigValue(uint8_t value,uint8_t row,uint8_t column,uint8_t color);
 void putHalfBigLetter(uint8_t value,uint8_t row, uint8_t column,uint8_t color);
@@ -142,15 +144,9 @@ void putSymbol(uint8_t value,uint8_t position,uint8_t color);
 
 extern uint8_t drawFrame;
 extern uint8_t showFrame;
+extern volatile bool    bufferIsPrimed;
 
 void clearImage(uint32_t color);
-void initTopImage(void);
-
-extern int32_t timeValue;
-extern uint32_t colorValue;
-extern uint32_t modeValue;
-extern uint32_t roundValue;
-extern uint32_t heatValue;
 
 void paint(void);
 void paint64(void);

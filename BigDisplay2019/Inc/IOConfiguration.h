@@ -29,7 +29,7 @@
 #define RS485TX_PORT                 A
 #define RS485TX_BUS                  AHB1
 #define RS485TX_GRP                  1
-#define RS485TX_PIN_NUMBER           2
+#define RS485TX_PIN_NUMBER           8
 
 #define RS485TX_MODE                 LL_GPIO_MODE_OUTPUT
 #define RS485TX_AF                   LL_GPIO_AF_7
