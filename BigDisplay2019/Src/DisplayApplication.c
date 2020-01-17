@@ -184,6 +184,8 @@ void buttonTask(void const *argument)
                   if((delta > 50) && (delta < 1000))
                   {
                      incrementMode();
+                     showData(10,59,18,1+ 'A',2,FLY_MIDDLE,GREEN);
+                     changeImagePlane();
                   }
                   else if(delta > 1000)
                   {
