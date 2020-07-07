@@ -2050,7 +2050,7 @@ void initGPIO(void)
 }
 // Variable that shows the current display mode
 extern volatile uint32_t currentMode;
-
+#include "timertools.h"
 /**
  * @brief This is the task that scans the pixels out to the
  *        display. It adapts to the current mode, basically it
@@ -2072,6 +2072,7 @@ void scannerTask(void const *argument)
    LOWGPIO(OEB);
    /* Infinite loop */
    modeValue = currentMode;
+   initTimerTools();
    while(1)
    {
       if(displayMode.do2x5)
@@ -2080,7 +2081,8 @@ void scannerTask(void const *argument)
          {
             while(1)
             {
-               RTOS_MSEC_DELAY(1);
+               timerToolsPrecisionDelay(500);
+               // RTOS_MSEC_DELAY(1);
                outputRow(NUMPIXELS_2x5_ONE_SIXTEENTH_SCAN,&(displayBufferOneSixtenthScan[showFrame][bank][0]),0x0F);
                if(modeValue != currentMode)
                {

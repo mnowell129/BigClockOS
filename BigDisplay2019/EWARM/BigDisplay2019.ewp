@@ -660,15 +660,15 @@
                 <option>
                     <name>OOCOutputFormat</name>
                     <version>3</version>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>OCOutputOverride</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
                 <option>
                     <name>OOCOutputFile</name>
-                    <state>Project.srec</state>
+                    <state>BigDisplay2020.hex</state>
                 </option>
                 <option>
                     <name>OOCCommandLineProducer</name>
@@ -676,7 +676,7 @@
                 </option>
                 <option>
                     <name>OOCObjCopyEnable</name>
-                    <state>0</state>
+                    <state>1</state>
                 </option>
             </data>
         </settings>
@@ -1105,6 +1105,9 @@
             <file>
                 <name>$PROJ_DIR$\..\Src\stm32f4xx_it.c</name>
             </file>
+            <file>
+                <name>$PROJ_DIR$\..\Src\TimerTools.c</name>
+            </file>
         </group>
     </group>
     <group>
@@ -1167,6 +1170,9 @@
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_rcc.c</name>
+            </file>
+            <file>
+                <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_tim.c</name>
             </file>
             <file>
                 <name>$PROJ_DIR$\..\Drivers\STM32F4xx_HAL_Driver\Src\stm32f4xx_ll_usart.c</name>

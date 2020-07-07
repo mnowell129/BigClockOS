@@ -165,6 +165,11 @@ void buttonTask(void const *argument)
 {
    int32_t downEdgeTime;
    INITGPIOIN(BUTTON);
+
+   RTOS_MSEC_DELAY(500);
+
+   //showData(10,00,18,1+ 'A',2,FLY_MIDDLE,GREEN);
+
    while(1)
    {
       if(ISLOW(BUTTON))
@@ -193,6 +198,8 @@ void buttonTask(void const *argument)
                   }
                   break;
                }
+               
+               
             }
          }
       }

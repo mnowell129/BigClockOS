@@ -420,6 +420,8 @@
             <F N="BigDisplay2019/Src/stm32f4xx_hal_msp.c"/>
             <F N="BigDisplay2019/Src/stm32f4xx_it.c"/>
             <F N="BigDisplay2019/Src/system_stm32f4xx.c"/>
+            <F N="BigDisplay2019/Src/TimerTools.c"/>
+            <F N="BigDisplay2019/Src/TimerTools.h"/>
             <F N="BigDisplay2019/Src/usart.c"/>
             <F N="BigDisplay2019/Src/wide.c"/>
          </Folder>

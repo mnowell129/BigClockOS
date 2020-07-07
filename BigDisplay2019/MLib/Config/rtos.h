@@ -32,6 +32,21 @@
 #define RTOS_SEMA             void
 #define RTOS_SEMA_PTR         SemaphoreHandle_t
 
+
+#define RTOS_SEMA_PTR         SemaphoreHandle_t
+#define RTOS_SEMA_OBJECT(a)   SemaphoreHandle_t a;StaticSemaphore_t a##Data
+#define RTOS_COUNTING_SEMA_OBJECT(a,b,c)   SemaphoreHandle_t a;StaticSemaphore_t a##Data;\
+const uint32_t a##_INITIAL = b;const uint32_t a##_MAX = c
+#define EXTERN_RTOS_SEMA_OBJECT(a)   extern SemaphoreHandle_t a;extern StaticSemaphore_t a##Data
+#define RTOS_SEMA_DATA(a)     StaticSemaphore_t  a##Data
+
+#define SEMA_CREATE(a)               a = xSemaphoreCreateCountingStatic(a##_MAX,a##_INITIAL,&a##Data)
+#define SEMA_CREATE_STATIC(a)               a = xSemaphoreCreateCountingStatic(a##_MAX,a##_INITIAL,&a##Data)
+#define SEMA_CREATE_COUNTING(ptr,max,initial)               ptr = xSemaphoreCreateCounting(max,initial)
+#define SEMA_CREATE_BINARY(a)                 a=xSemaphoreCreateBinary();xSemaphoreGive(a)
+#define SEMA_CREATE_BINARY_STATIC(a)                 a=xSemaphoreCreateBinaryStatic(&a##Data);xSemaphoreGive(a)
+#define SEMA_CREATE_BINARY_STATIC_NO_GIVE(a)         a=xSemaphoreCreateBinaryStatic(&a##Data)
+
 #define SEMA_GET(a,t,e)       e = xSemaphoreTake(a,t)
 #define SEMA_GET_WAIT_FOREVER(a)       xSemaphoreTake(a,portMAX_DELAY)
 #define SEMA_PUT(a)           xSemaphoreGive(a)
