@@ -28,6 +28,10 @@
 #define COLOR(x)            COLOR_PORT->ODR = x;
 
 
+#define NUMPIXELS_1x2_ONE_EIGHTH_SCAN       (32*4)   // 320
+#define NUMPIXELS_1x2x3_ONE_EIGHTH_SCAN     (32 * 12)  // 256
+// #define ONE_EIGHT_SCAN_ELECTRONIC_ROWS      (8)
+
 #define NUMPIXELS_2x5_ONE_EIGHTH_SCAN       (32*10)   // 320
 #define NUMPIXELS_1x4_ONE_EIGHTH_SCAN       (32 * 8)  // 256
 #define NUMPIXELS_2x5_ONE_SIXTEENTH_SCAN    (32*5)    // 160

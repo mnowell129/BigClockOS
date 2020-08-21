@@ -56,6 +56,12 @@
 #include "DisplayApplication.h"
 
 
+void resetTheMicro(void)
+{
+   __disable_interrupt();
+   NVIC_SystemReset();
+}
+
 void SystemClock_Config(void)
 {
 

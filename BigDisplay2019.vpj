@@ -319,6 +319,7 @@
             <F N="BigDisplay2019/EWARM/stm32f446xx_sram.icf"/>
          </Folder>
          <Folder Name="Inc">
+            <F N="BigDisplay2019/Inc/config.h"/>
             <F N="BigDisplay2019/Inc/DisplayDriver.h"/>
             <F N="BigDisplay2019/Inc/DisplayDriverInternal.h"/>
             <F N="BigDisplay2019/Inc/FreeRTOSConfig.h"/>

@@ -13,6 +13,7 @@
  */
 #include <string.h>
 #include <ctype.h>
+#include "config.h"
 /* Kernel includes. */
 #include "FreeRTOS.h"
 #include "cmsis_os.h"
@@ -243,7 +244,7 @@ const uint8_t halfnine[HALF_HEIGHT][HALF_WIDTH] =
    /* 13 */ 0,1,1,1,1,1,1,1,0
 
 };
-// These are used for the flight number 
+// These are used for the flight number
 const HalfDigitType  halfDigits[10] =
 {
    &halfzero,&halfone,&halftwo,&halfthree,&halffour,&halffive,&halfsix,&halfseven,&halfeight,&halfnine
@@ -784,6 +785,19 @@ const DigitType(digits[10]) =
 {
    &zero,&one,&two,&three,&four,&five,&six,&seven,&eight,&nine
 };
+
+
+
+const DigitType(miniDigits[10]) =
+{
+   &miniZero,&miniOne,&miniTwo,&miniThree,&miniFour,&miniFive,&miniSix,&miniSeven,&miniEight,&miniNine
+};
+
+const DigitType(microDigits[10]) =
+{
+   &microZero,&microOne,&microTwo,&microThree,&microFour,&microFive,&microSix,&microSeven,&microEight,&microNine
+};
+
 /**
  * @brief 32 pixel high letters for small display.
  *
@@ -801,6 +815,26 @@ const DigitType(bigLetters[26]) =
    &smallK,&smallL,&smallM,&smallN,&smallO,
    &smallP,&smallQ,&smallR,&smallS,&smallT,
    &smallU,&smallV,&smallW,&smallX,&smallY,&smallZ
+};
+
+
+const DigitType(miniLetters[26]) =
+{
+   &miniA,&miniB,&miniC,&miniD,&miniE,
+   &miniF,&miniG,&miniH,&miniI,&miniJ,
+   &miniK,&miniL,&miniM,&miniN,&miniO,
+   &miniP,&miniQ,&miniR,&miniS,&miniT,
+   &miniU,&miniV,&miniW,&miniX,&miniY,&miniZ
+};
+
+
+const DigitType(microLetters[26]) =
+{
+   &microA,&microB,&microC,&microD,&microE,
+   &microF,&microG,&microH,&microI,&microJ,
+   &microK,&microL,&microM,&microN,&microO,
+   &microP,&microQ,&microR,&microS,&microT,
+   &microU,&microV,&microW,&microX,&microY,&microZ
 };
 
 /**
@@ -1175,14 +1209,14 @@ const uint8_t  windowIcon[SMALL_HEIGHT][SMALL_WIDTH] =
 const SmallDigitType(symbols[9]) =
 {
    [BIGP     ] = &bigP,
-   [BIGW     ] = &bigW,
-   [BIGL     ] = &bigL,
-   [MINUS    ] = &minusIcon,
-   [WINDOW   ] = &windowIcon,
-   [PLUS     ] = &plusIcon,
-   [STOP     ] = &stopIcon,
-   [HOURGLASS] = &hourGlassIcon,
-   [BREAK    ] = &breakIcon
+[BIGW     ] = &bigW,
+[BIGL     ] = &bigL,
+[MINUS    ] = &minusIcon,
+[WINDOW   ] = &windowIcon,
+[PLUS     ] = &plusIcon,
+[STOP     ] = &stopIcon,
+[HOURGLASS] = &hourGlassIcon,
+[BREAK    ] = &breakIcon
 };
 
 
@@ -1194,7 +1228,7 @@ const SmallDigitType(symbols[9]) =
 #define POS(a)   FULL_WIDTH-a*(DOUBLE_WIDTH+2)
 // first two entries are uncorrected 1's place, and corrected 1's place when there is
 // a space for icons.
-int32_t letterOffsets[] = {POS(4)-9,POS(4) + 1,POS(3) - 9,POS(2) + 1,POS(1) + 2};
+int32_t letterOffsets[] = {POS(4) - 9,POS(4) + 1,POS(3) - 9,POS(2) + 1,POS(1) + 2};
 int32_t letterRoundOffsets[] = {0,(DOUBLE_WIDTH + 3),2 * (DOUBLE_WIDTH + 3),3 * (DOUBLE_WIDTH + 3)};
 
 int32_t letterOffsetsSmall[] =
@@ -1208,6 +1242,20 @@ int32_t letterOffsetsSmall[] =
    80, // 87 - 7 for colon
    87,
    107
+};
+
+
+int32_t letterOffsetsMini[] =
+{
+   // I know, magic numbers, but this is based on 18 pixel wide digits with 2 pixel spacin
+   // plus 7 pixels for the colon
+   0,
+   0,
+   0,
+   15,
+   30, // for colon
+   33,
+   50
 };
 
 
@@ -1227,12 +1275,16 @@ int32_t smallLetterRoundOffsets[] =
 
 const uint8_t smallDot[DOT_HIGH][DOT_WIDE] =
 {
+   #ifdef LITTLE_PANEL
+   1,1,1,1
+   #else
    0,0,1,1,0,0,
    0,1,1,1,1,0,
    1,1,1,1,1,1,
    1,1,1,1,1,1,
    0,1,1,1,1,0,
    0,0,1,1,0,0,
+   #endif
 };
 /**
  * @brief Draw a single dot, part of the colon.
@@ -1254,7 +1306,7 @@ void putDot(uint32_t row,uint32_t column,uint8_t color)
       for(j = 0;j < DOT_WIDE;j++)
       {
          theColor = 0;
-         if(smallDot[i][j])
+         // if(smallDot[i][j])
          {
             theColor = color;
          }
@@ -1292,8 +1344,8 @@ void putColon(uint8_t color)
  */
 void putLittleColon(uint8_t color)
 {
-   putDot(9,letterOffsetsSmall[4],color);
-   putDot(19,letterOffsetsSmall[4],color);
+   putDot(6,letterOffsetsMini[4],color);
+   putDot(18,letterOffsetsMini[4],color);
 }
 
 
@@ -1627,20 +1679,20 @@ void putStage(uint8_t color,uint8_t position)
  */
 void putBigLetter(uint8_t value,uint8_t position,uint8_t color)
 {
-   DigitType digit = bigLetters[value];
+   DigitType digit = miniLetters[value];
    int i;
    int j;
    uint32_t  row;
-   for(i = 0;i < (SMALL_HEIGHT);i++)
+   for(i = 0;i < (MINI_HEIGHT);i++)
    {
       row = (uint32_t)((*digit)[i] & 0xFFFFFFFF);
-      row <<= 14;
-      for(j = 0;j < SMALL_WIDTH;j++)
+      row <<= 14 + 4;
+      for(j = 0;j < MINI_WIDTH;j++)
       {
          // if((*digit)[i / 2][j / 2])
          if(row & 0x80000000)
          {
-            putPixel(drawFrame,i,j + letterOffsetsSmall[position],color);
+            putPixel(drawFrame,i,j + letterOffsetsMini[position],color);
          }
          row <<= 1;
          // Assume buffer is empty
@@ -1806,20 +1858,20 @@ void putHalfBigLetter(uint8_t value,uint8_t row, uint8_t column,uint8_t color)
  */
 void putValue(uint8_t value,uint8_t position,uint8_t color)
 {
-   DigitType digit = digits[value];
+   DigitType digit = miniDigits[value];
    int i;
    int j;
    uint32_t  row;
-   for(i = 0;i < (SMALL_HEIGHT);i++)
+   for(i = 0;i < (MINI_HEIGHT);i++)
    {
       row = (uint32_t)((*digit)[i] & 0xFFFFFFFF);
-      row <<= 14;
-      for(j = 0;j < SMALL_WIDTH;j++)
+      row <<= 14 + 4;
+      for(j = 0;j < MINI_WIDTH;j++)
       {
          // if((*digit)[i / 2][j / 2])
          if(row & 0x80000000)
          {
-            putPixel(drawFrame,i,j + letterOffsetsSmall[position],color);
+            putPixel(drawFrame,i,j + letterOffsetsMini[position],color);
          }
          row <<= 1;
          // Assume buffer is empty
@@ -1857,6 +1909,136 @@ void putSymbol(uint8_t value,uint8_t position,uint8_t color)
       }
    }
 }
+
+
+
+void putMicroValue(uint8_t value,uint8_t position,uint8_t color)
+{
+   DigitType digit = microDigits[value];
+   int i;
+   int j;
+   uint32_t  row;
+   for(i = 0;i < (MICRO_HEIGHT);i++)
+   {
+      row = (uint32_t)((*digit)[i] & 0xFFFFFFFF);
+      row <<= 14 + 4;
+      for(j = 0;j < MICRO_WIDTH;j++)
+      {
+         // if((*digit)[i / 2][j / 2])
+         if(row & 0x80000000)
+         {
+            putPixel(drawFrame,27 + i,j + position,color);
+         }
+         row <<= 1;
+         // Assume buffer is empty
+      }
+   }
+}
+
+
+void putMicroText(char *string,uint8_t color, uint32_t startingColumn)
+{
+   DigitType digit;
+   int i;
+   int j;
+   int column;
+   uint32_t  row;
+   column = startingColumn;
+   while(*string)
+   {
+      if(*string == ' ')
+      {
+         column++;
+         string++;
+         continue;
+      }
+      digit = microLetters[toupper(*string) - 'A'];
+
+      for(i = 0;i < (MICRO_HEIGHT);i++)
+      {
+         row = (uint32_t)((*digit)[i] & 0xFFFFFFFF);
+         row <<= 14 + 4;
+         for(j = 0;j < MICRO_WIDTH;j++)
+         {
+            // if((*digit)[i / 2][j / 2])
+            if(row & 0x80000000)
+            {
+               putPixel(drawFrame,27 + i,j + column * 6,color);
+            }
+            row <<= 1;
+            // Assume buffer is empty
+         }
+      }
+      string++;
+      column++;
+   }
+}
+
+
+void putMicroTextAbsolutePosition(char *string,uint8_t color, uint32_t startingPosition)
+{
+   DigitType digit;
+   int i;
+   int j;
+   int column;
+   uint32_t  row;
+   while(*string)
+   {
+      if(*string == ' ')
+      {
+         column++;
+         string++;
+         continue;
+      }
+      digit = microLetters[toupper(*string) - 'A'];
+
+      for(i = 0;i < (MICRO_HEIGHT);i++)
+      {
+         row = (uint32_t)((*digit)[i] & 0xFFFFFFFF);
+         row <<= 14 + 4;
+         for(j = 0;j < MICRO_WIDTH;j++)
+         {
+            // if((*digit)[i / 2][j / 2])
+            if(row & 0x80000000)
+            {
+               putPixel(drawFrame,27 + i,j + startingPosition,color);
+            }
+            row <<= 1;
+            // Assume buffer is empty
+         }
+      }
+      string++;
+      column++;
+   }
+}
+
+void putMicroRoundHeat(uint32_t round, uint32_t heat,uint32_t flight, uint8_t color)
+{
+
+   char heatString[2];
+   heatString[1] = 0;
+   heatString[0] = heat;
+
+   putMicroTextAbsolutePosition(heatString,color,64 - 6 + 1);
+
+
+
+   if(round > 9)
+   {
+      putMicroValue(round / 10,63 - 24  + 1-2,WHITE);
+      putMicroValue(round % 10,63 - 18  + 1-2,WHITE);
+   }
+   else
+   {
+      putMicroValue(round,63 - 18  + 1 -2 ,WHITE);
+   }
+   if(flight > 0)
+   {
+      putPixel(drawFrame,31,63 - 12 + 1 - 2,WHITE);
+      putMicroValue(flight,63 - 12  + 1,WHITE);
+   }
+}
+
 
 /**
  * @brief Draw a 32 pixel high number, any x y coordinate

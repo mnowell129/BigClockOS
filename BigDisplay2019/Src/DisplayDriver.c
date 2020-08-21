@@ -11,23 +11,24 @@
  * mickeysbigtimer@gmail.com 
  *  
  */
- /**
- * Display driver. 
- * DisplayDriver.c 
- * Panel driver for the big timer. 
- *  
- * Charles M Nowell, Jr. 
- * 2019 
- *  
- * This application uses the startup code from the sample 
- * freertos example. 
- *  
- */
+/**
+* Display driver. 
+* DisplayDriver.c 
+* Panel driver for the big timer. 
+*  
+* Charles M Nowell, Jr. 
+* 2019 
+*  
+* This application uses the startup code from the sample 
+* freertos example. 
+*  
+*/
 
 #include "FreeRTOS.h"
 #include "task.h"
 #include "cmsis_os.h"
 
+#include "config.h"
 
 #include "main.h"
 #include "stm32f4xx_hal.h"
@@ -666,7 +667,16 @@ volatile int32_t milliseconds;
 // Make these settable by jumpers on pullups, perhaps override by command
 // But this caused some confusion so perhaps better to make it fixed by hardware
 // configuration.
+#ifdef LITTLE_PANEL
 
+volatile DisplayModeType displayMode =
+{
+   .doInverted = true,
+   .do1x2x2 = true,
+   .alternate8Scan = true,
+   .displayModeIndex = 7
+};
+#else
 volatile DisplayModeType displayMode =
 {
    .doScan16 = false,
@@ -674,28 +684,25 @@ volatile DisplayModeType displayMode =
    .do2x5 = true,
    .alternate8Scan = true
 };
+#endif
 
-#define ENTRY(a,b,c,d) {.doScan16 = a,.alternate8Scan = b,.doInverted = c,.do2x5 = d}
+#ifdef LITTLE_PANEL
+   #define ENTRY(a,b,c,n) {.doInverted = a,.do1x2x2 = b,.alternate8Scan = c, .displayModeIndex = n}
+#else
+   #define ENTRY(a,b,c,d) {.doScan16 = a,.alternate8Scan = b,.doInverted = c,.do2x5 = d}
+#endif
+
 // Table for all possible displays, panel types and mounting.
-DisplayModeType  displayModes[16] =
+DisplayModeType  displayModes[8] =
 {
-
-    ENTRY(false,false,false,false),
-    ENTRY(false,false,false,true),
-    ENTRY(false,false,true,false),
-    ENTRY(false,false,true,true), 
-    ENTRY(false,true,false,false),
-    ENTRY(false,true,false,true),
-    ENTRY(false,true,true,false),
-    ENTRY(false,true,true,true),
-    ENTRY(true,false,false,false),
-    ENTRY(true,false,false,true),
-    ENTRY(true,false,true,false),
-    ENTRY(true,false,true,true),
-    ENTRY(true,true,false,false),
-    ENTRY(true,true,false,true),
-    ENTRY(true,true,true,false),
-    ENTRY(true,true,true,true),
+   ENTRY(false,false,false,0),
+   ENTRY(false,false,true,1),
+   ENTRY(false,true,false,2),
+   ENTRY(false,true,true,3),
+   ENTRY(true,false,false,4),
+   ENTRY(true,false,true,5),
+   ENTRY(true,true,false,6),
+   ENTRY(true,true,true,7)
 };
 
 /**
@@ -745,6 +752,40 @@ void setupAlternateColors(void)
  * 
  * @param void 
  */
+#ifdef LITTLE_PANEL
+
+typedef void (*PutPixelScanFunctionType)(uint32_t buffer, int32_t y, int32_t x, uint32_t color);
+typedef struct PutPixelSetupStuff
+{
+   PutPixelScanFunctionType  pixelFunction;
+   bool                      alternateColors;
+}PutPixelSetupStuff;
+
+const PutPixelSetupStuff pixelFunctionLookup[8] =
+{
+
+   // 
+   //  doInverted,do1x2x2,alternate8Scan
+   // 
+   /*  false, false, false */   {.alternateColors = false,.pixelFunction = putPixelScan8SmallDisplay},
+   /*  false, false,  true */   {.alternateColors =  true,.pixelFunction = putPixelScan8AlternateSmallDisplay},
+   /*  false,  true, false */   {.alternateColors = false,.pixelFunction = putPixelScan8SmallDisplay},
+   /*  false,  true,  true */   {.alternateColors =  true,.pixelFunction = putPixelScan8AlternateSmallDisplay},
+   /*   true, false, false */   {.alternateColors = false,.pixelFunction = putPixelScan8Inverted},
+   /*   true, false,  true */   {.alternateColors =  true,.pixelFunction = putPixelScan8AlternateInverted},
+   /*   true,  true, false */   {.alternateColors = false,.pixelFunction = putPixelScan8Inverted},
+   /*   true,  true,  true */   {.alternateColors =  true,.pixelFunction = putPixelScan8Inverted},
+};
+void setupPixelPutFunction(void)
+{
+   setupColors();
+   putPixelPointer = pixelFunctionLookup[displayMode.displayModeIndex].pixelFunction;
+   if(pixelFunctionLookup[displayMode.displayModeIndex].alternateColors)
+   {
+      setupAlternateColors();
+   }
+}
+#else
 void setupPixelPutFunction(void)
 {
    setupColors();
@@ -792,7 +833,7 @@ void setupPixelPutFunction(void)
    }
    else
    {
-      // 1x4 display
+      // Triangle display
       if(!displayMode.doInverted)
       {
          if(displayMode.doScan16)
@@ -834,7 +875,7 @@ void setupPixelPutFunction(void)
       }
    }
 }
-
+#endif
 /**
  * @brief Set the mode for display type.
  *
@@ -847,15 +888,28 @@ void setMode(uint32_t mode)
 {
    uint32_t newMode;
    newMode = mode;
+   #ifdef LITTLE_PANEL
+   newMode &= 0x07;
+   #else
    newMode &= 0x0F;
+   #endif
 
    ENTER_CRITICAL();
+   #ifdef LITTLE_PANEL
+   displayMode.alternate8Scan = displayModes[newMode].alternate8Scan;
+   displayMode.do1x2x2 = displayModes[newMode].do1x2x2;
+   displayMode.doInverted = displayModes[newMode].doInverted;
+   displayMode.displayModeIndex = newMode;
+   currentMode = newMode;
+   setupPixelPutFunction();
+   #else
    displayMode.alternate8Scan = displayModes[newMode].alternate8Scan;
    displayMode.do2x5 = displayModes[newMode].do2x5;
    displayMode.doScan16 = displayModes[newMode].doScan16;
    displayMode.doInverted = displayModes[newMode].doInverted;
    currentMode = newMode;
    setupPixelPutFunction();
+   #endif
    EXIT_CRITICAL();
 }
 /**
@@ -867,16 +921,29 @@ void setMode(uint32_t mode)
 void incrementMode(void)
 {
    uint32_t newMode;
-   newMode = currentMode+1;
+   newMode = currentMode + 1;
+   #ifdef LITTLE_PANEL
+   newMode &= 0x07;
+   #else
    newMode &= 0x0F;
+   #endif
 
    ENTER_CRITICAL();
+   #ifdef LITTLE_PANEL
+   displayMode.alternate8Scan = displayModes[newMode].alternate8Scan;
+   displayMode.do1x2x2 = displayModes[newMode].do1x2x2;
+   displayMode.doInverted = displayModes[newMode].doInverted;
+   displayMode.displayModeIndex = newMode;
+   currentMode = newMode;
+   setupPixelPutFunction();
+   #else
    displayMode.alternate8Scan = displayModes[newMode].alternate8Scan;
    displayMode.do2x5 = displayModes[newMode].do2x5;
    displayMode.doScan16 = displayModes[newMode].doScan16;
    displayMode.doInverted = displayModes[newMode].doInverted;
    currentMode = newMode;
    setupPixelPutFunction();
+   #endif
    EXIT_CRITICAL();
 }
 
@@ -925,7 +992,7 @@ uint16_t(*displayBufferOneSixtenthScan)[ONE_SIXTEENTH_SCAN_ELECTRONIC_ROWS][NUMP
  * 
  * @param buffer 
  */
-void clearBuffer(uint32_t buffer, uint32_t color)
+                                                                                                                void clearBuffer(uint32_t buffer, uint32_t color)
 {
    // note 2 = 2 bytes per word16
    memset(displayBufferOneEighthScan[buffer],color,ONE_EIGHT_SCAN_ELECTRONIC_ROWS * NUMPIXELS_2x5_ONE_EIGHTH_SCAN * 2);
@@ -1031,7 +1098,9 @@ const uint32_t  x4Delta[] =
 static int32_t xMaximum = 159;
 static int32_t yMaximum  = 63;
 // Maximum coordinates for small display
-static int32_t xMaximumSmallDisplay = 127;
+//static int32_t xMaximumSmallDisplay = 127;
+// static int32_t yMaximumSmallDisplay  = 31;
+static int32_t xMaximumSmallDisplay = 63;
 static int32_t yMaximumSmallDisplay  = 31;
 
 /**
@@ -1500,7 +1569,7 @@ void putPixelScan8InvertedSmallDisplay(uint32_t buffer, int32_t y, int32_t x, ui
    // so 64 rows divided by 16 determines 0..3, or which pixel in
    // the 12 bits we are operating on.
    // Also works for a half high display with 1x4 arrangement.
-   shift = y >> 4; 
+   shift = y >> 4;
    // add 2 to shift to use the upper display
    shift += 2;
    // figure out the odd tweak to X based on whether we are not on the prime row
@@ -1663,7 +1732,7 @@ void putPixelScan8AlternateInvertedSmallDisplay(uint32_t buffer, int32_t y, int3
    // so 64 rows divided by 16 determines 0..3, or which pixel in
    // the 12 bits we are operating on.
    // Also works for a half high display with 1x4 arrangement.
-   shift = y >> 4; 
+   shift = y >> 4;
    // add 2 to shift to use the upper display
    shift += 2;
    // figure out the odd tweak to X based on whether we are not on the prime row
@@ -1900,7 +1969,7 @@ void putPixelScan16InvertedSmallDisplay(uint32_t buffer, int32_t y, int32_t x, u
    y = savey;
    x = savex;
    shift = y >> 4;
-   shift +=2;
+   shift += 2;
    indexX = x;
    indexY = y & 0x0f;
    displayBufferOneSixtenthScan[buffer][indexY][indexX] |= color << (shift * 3);
@@ -2003,7 +2072,7 @@ void outputRow(uint32_t columns,uint16_t   *pixelRow,uint32_t bankMask)
    // Now drive out all the pixels
    for(i = 0;i < columns;i++)
    {
-      drivePixelsOut2x5(*pixelRow++); 
+      drivePixelsOut2x5(*pixelRow++);
    }
    NOP();
    NOP();
@@ -2022,7 +2091,7 @@ void outputRow(uint32_t columns,uint16_t   *pixelRow,uint32_t bankMask)
    // Drive the correct bank with the pixels
    BANK(bank++);
    // Move to next bank for next time
-   bank &= bankMask; 
+   bank &= bankMask;
 }
 
 
@@ -2075,66 +2144,15 @@ void scannerTask(void const *argument)
    initTimerTools();
    while(1)
    {
-      if(displayMode.do2x5)
+      while(1)
       {
-         if(displayMode.doScan16)
+         RTOS_MSEC_DELAY(1);
+         //outputRow(NUMPIXELS_1x4_ONE_EIGTH_SCAN,&(displayBufferOneEighthScan[showFrame][bank][0]),0x07);
+         outputRow(NUMPIXELS_1x2_ONE_EIGHTH_SCAN,&(displayBufferOneEighthScan[showFrame][bank][0]),0x07);
+         if(modeValue != currentMode)
          {
-            while(1)
-            {
-               timerToolsPrecisionDelay(500);
-               // RTOS_MSEC_DELAY(1);
-               outputRow(NUMPIXELS_2x5_ONE_SIXTEENTH_SCAN,&(displayBufferOneSixtenthScan[showFrame][bank][0]),0x0F);
-               if(modeValue != currentMode)
-               {
-                  modeValue = currentMode;
-                  break;
-               }
-            }
-         }
-         else
-         {
-            while(1)
-            {
-               RTOS_MSEC_DELAY(1);
-               outputRow(NUMPIXELS_2x5_ONE_EIGHTH_SCAN,&(displayBufferOneEighthScan[showFrame][bank][0]),0x07);
-               // outputRow2x5OneEigthScan(); // 0,5,NUMPIXELS_2x5_ONE_EIGHTH_SCAN);
-               if(modeValue != currentMode)
-               {
-                  modeValue = currentMode;
-                  break;
-               }
-            }
-         }
-      }
-      else
-      {
-         // 1x4 panel
-         if(displayMode.doScan16)
-         {
-            while(1)
-            {
-               RTOS_MSEC_DELAY(1);
-               outputRow(NUMPIXELS_1x4_ONE_SIXTEENTH_SCAN,&(displayBufferOneSixtenthScan[showFrame][bank][0]),0x0F);
-               if(modeValue != currentMode)
-               {
-                  modeValue = currentMode;
-                  break;
-               }
-            }
-         }
-         else
-         {
-            while(1)
-            {
-               RTOS_MSEC_DELAY(1);
-               //outputRow(NUMPIXELS_1x4_ONE_EIGTH_SCAN,&(displayBufferOneEighthScan[showFrame][bank][0]),0x07);
-               outputRow(NUMPIXELS_1x4_ONE_EIGHTH_SCAN,&(displayBufferOneEighthScan[showFrame][bank][0]),0x07);
-               if(modeValue != currentMode)
-               {
-                  modeValue = currentMode;
-                  break;
-               }
-            }
+            modeValue = currentMode;
+            break;
          }
       }
    }

@@ -88,6 +88,14 @@ extern LetterType* (alphabet[26]);
 #define SMALL_WIDTH   18
 #define SMALL_HEIGHT  32
 
+#define MINI_WIDTH   14
+#define MINI_HEIGHT  26
+
+
+#define MICRO_WIDTH   5
+#define MICRO_HEIGHT  5
+
+
 #define PIXELS_WIDE (32*5)
 #define PIXELS_HIGH (32*2)
 
@@ -109,11 +117,12 @@ extern const DigitType(bigLetters[26]);
 
 #define DOUBLE_WIDTH (SMALL_WIDTH*2)
 #define DOUBLE_HEIGHT (SMALL_HEIGHT*2)
-extern int32_t letterOffsets[5];
+//extern int32_t letterOffsets[5];
+//extern int32_t letterOffsetsMini[6];
 extern const uint8_t shiftAmounts[4];
 
-#define DOT_HIGH 6
-#define DOT_WIDE 6
+#define DOT_HIGH 2
+#define DOT_WIDE 2
 extern const uint8_t smallDot[DOT_HIGH][DOT_WIDE];
 
 void putDot(uint32_t row,uint32_t column,uint8_t color);
@@ -142,6 +151,7 @@ void putSymbol(uint8_t value,uint8_t position,uint8_t color);
 
 
 
+
 extern uint8_t drawFrame;
 extern uint8_t showFrame;
 extern volatile bool    bufferIsPrimed;
@@ -153,6 +163,11 @@ void paint64(void);
 void paintRound(uint8_t round,uint8_t heat);
 void paintRound64(uint8_t round,uint8_t heat,uint32_t color);
 void putBigLetter64(uint8_t value,uint8_t position,uint8_t color);
+
+
+void putMicroRoundHeat(uint32_t round, uint32_t heat,uint32_t flight, uint8_t color);
+void putMicroText(char *string,uint8_t color, uint32_t startingColumn);
+
 
 
 // void paintRound64(uint8_t round,uint8_t heat);
@@ -167,6 +182,13 @@ void tick(void);
 #define SIGN_PLACE            1
 #define HEAT_PLACE            1
 #define ROUND_PLACE           0
+
+#define MINI_ONES_PLACE  6
+#define MINI_TENS_PLACE  5
+#define MINI_MINUTES_PLACE  3
+#define TENS_OF_MINI_MINUTES_PLACE 2
+
+
 
 #define LEFT_MARGIN           0
 

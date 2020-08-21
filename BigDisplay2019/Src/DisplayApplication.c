@@ -39,6 +39,8 @@
 #include "type.h"
 #include "rtos.h"
 
+#include "config.h"
+
 #include "stm32F4xx.h"
 #include "stm32F446deviceall.h"
 #include "gpioapi.h"
@@ -150,6 +152,9 @@ void commitMode(void)
    writeFlash((uint8_t *)modeBuffer,MODE_SIZE_FOR_CRC + 2);
 }
 
+
+void showRoundAndHeat(uint32_t round, uint32_t heat,uint32_t color);
+
 /**
  * @brief This tasks monitors the button in a rather simple way.
  *        Then short press cycles through the modes. Long press
@@ -164,11 +169,60 @@ void commitMode(void)
 void buttonTask(void const *argument)
 {
    int32_t downEdgeTime;
+   int i;
+   int j;
+   int32_t seconds;
+   int flight;
+   int symbol;
+   int color;
    INITGPIOIN(BUTTON);
 
-   RTOS_MSEC_DELAY(500);
+   // incrementMode();
+   i = 0;
+   j = 1;
+   seconds = 600;
+   flight = 0;
+   symbol = 0;
+   color = 0;
+   // showData(seconds / 60, seconds % 60,j,i + 'A',flight,i%8,colors[i%6 + 1]);
+#if 0 // debug demo
+   while(1)
+   {
+      RTOS_MSEC_DELAY(1000);
 
-   //showData(10,00,18,1+ 'A',2,FLY_MIDDLE,GREEN);
+      showData(seconds / 60, seconds % 60,j,i + 'A',flight,i%8,colors[i%6 + 1]);
+      seconds--;
+      if(seconds < 0)
+      {
+         seconds = 600;
+      }
+      flight++;
+      if(flight > 3)
+      {
+         flight = 0;
+      }
+      changeImagePlane();
+
+
+      RTOS_MSEC_DELAY(1000);
+
+      showRoundAndHeat(j,i,WHITE);
+      changeImagePlane();
+      i++;
+      if(i > 25)
+      {
+         i = 0;
+      }
+      j++;
+      if(j > 24)
+      {
+         j = 1;
+      }
+   }
+#endif
+   RTOS_MSEC_DELAY(250);
+   showData(10,00,1,'A',0,FLY_MIDDLE,GREEN);
+   changeImagePlane();
 
    while(1)
    {
@@ -189,7 +243,7 @@ void buttonTask(void const *argument)
                   if((delta > 50) && (delta < 1000))
                   {
                      incrementMode();
-                     showData(10,59,18,1+ 'A',2,FLY_MIDDLE,GREEN);
+                     showData(10,59,18,1 + 'A',2,FLY_MIDDLE,GREEN);
                      changeImagePlane();
                   }
                   else if(delta > 1000)
@@ -198,8 +252,8 @@ void buttonTask(void const *argument)
                   }
                   break;
                }
-               
-               
+
+
             }
          }
       }
@@ -296,107 +350,49 @@ void showData(uint32_t minutes, uint32_t seconds, uint32_t round, uint32_t heat,
 {
 
    clearImage(0);
-
-   if(displayMode.do2x5)
-   {
-      putColon(color);
-      putValue64(seconds % 10,ONES_PLACE,color);
-      putValue64(seconds / 10,TENS_PLACE,color);
-      putValue64(minutes % 10,MINUTES_PLACE,color);
-      if(minutes / 10)
-      {
-         putValue64(minutes / 10,TENS_OF_MINUTES_PLACE,color);
-      }
-      putStage(color,symbol);
-      if(flight > 0)
-      {
-
-         switch(symbol)
-         {
-            case STOP_TOP:
-               putHalfBigValue(flight,PIXELS_HIGH - 14,10,WHITE);
-               break;
-            case FLY_TOP:
-               putHalfBigValue(flight,PIXELS_HIGH - 14,10,WHITE);
-               break;
-            case LAND_TOP:
-               putHalfBigValue(flight,PIXELS_HIGH - 14,10,WHITE);
-               break;
-            case STOP_MIDDLE:
-               putHalfBigValue(flight,PIXELS_HIGH - 14,10,WHITE);
-               break;
-            case FLY_MIDDLE:
-               putHalfBigValue(flight,PIXELS_HIGH - 14,10,WHITE);
-               break;
-            case LAND_MIDDLE:
-               putHalfBigValue(flight,PIXELS_HIGH - 14,10,WHITE);
-               break;
-            case STOP_BOTTOM:
-               break;
-            case FLY_BOTTOM:
-               break;
-            case LAND_BOTTOM:
-               break;
-         }
-      }
-   }
-   else
    {
       // this is the 1x4 display, or a back to back 1x4
       putLittleColon(color);
-      putValue(seconds % 10,SMALL_ONES_PLACE,color);
-      putValue(seconds / 10,SMALL_TENS_PLACE,color);
-      putValue(minutes % 10,SMALL_MINUTES_PLACE,color);
+      putValue(seconds % 10,MINI_ONES_PLACE,color);
+      putValue(seconds / 10,MINI_TENS_PLACE,color);
+      putValue(minutes % 10,MINI_MINUTES_PLACE,color);
       if(minutes / 10)
       {
-         putValue(minutes / 10,TENS_OF_SMALL_MINUTES_PLACE,color);
+         putValue(minutes / 10,TENS_OF_MINI_MINUTES_PLACE,color);
       }
       switch(symbol)
       {
          case STOP_TOP:
-            putSymbol(6,SIGN_PLACE,RED);
+            putMicroText("NO FLY",RED,0);
             break;
          case FLY_TOP:
-            putSymbol(4,SIGN_PLACE,GREEN);
+            putMicroText("FLY",GREEN,0);
             break;
          case LAND_TOP:
-            putSymbol(6,SIGN_PLACE,RED);
+            putMicroText("LAND",RED,0);
             break;
          case STOP_MIDDLE:
-            putSymbol(6,SIGN_PLACE,RED);
+            putMicroText("NO FLY",RED,0);
             break;
          case FLY_MIDDLE:
-            putSymbol(4,SIGN_PLACE,GREEN);
+            putMicroText("WINDOW",GREEN,0);
             break;
          case LAND_MIDDLE:
-            putSymbol(6,SIGN_PLACE,RED);
+            putMicroText("LAND",RED,0);
             break;
          case STOP_BOTTOM:
-            putSymbol(6,SIGN_PLACE,RED);
+            putMicroText("NO FLY",RED,0);
             break;
          case FLY_BOTTOM:
-            putSymbol(4,SIGN_PLACE,GREEN);
+            putMicroText("WINDOW",GREEN,0);
             break;
          case LAND_BOTTOM:
-            putSymbol(6,SIGN_PLACE,RED);
+            putMicroText("LAND",RED,0);
             break;
-
       }
-      if(round > 9)
-      {
-         putHalfBigValue(round / 10,0,0,INFO_COLOR);
-         putHalfBigValue(round % 10,0,10,INFO_COLOR);
-      }
-      else
-      {
-         putHalfBigValue(round,0,0,INFO_COLOR);
-      }
-      putHalfBigLetter(heat - 'A',16,0,INFO_COLOR);
-      if(flight > 0)
-      {
-         putHalfBigValue(flight,16,10,INFO_COLOR);
-      }
+      putMicroRoundHeat(round,heat,flight,WHITE);
    }
+
    primeTheBuffer(true);
 }
 
@@ -415,24 +411,14 @@ void showRoundAndHeat(uint32_t round, uint32_t heat,uint32_t color)
 {
 
    clearImage(0);
-
-   if(displayMode.do2x5)
-   {
-      putBigLetter64(heat,ONES_PLACE,color);
-      putValue64(round % 10,MINUTES_PLACE,color);
-      if(round / 10)
-      {
-         putValue64(round / 10,HIGH_ROUND_PLACE,color);
-      }
-   }
-   else
    {
       // this is the 1x4 display, or a back to back 1x4
-      putBigLetter(heat,SMALL_ONES_PLACE,color);
-      putValue(round % 10,SMALL_MINUTES_PLACE,color);
+      putLittleColon(color);
+      putBigLetter(heat,MINI_TENS_PLACE,color);
+      putValue(round % 10,MINI_MINUTES_PLACE,color);
       if(round / 10)
       {
-         putValue(round / 10,TENS_OF_SMALL_MINUTES_PLACE,color);
+         putValue(round / 10,TENS_OF_MINI_MINUTES_PLACE,color);
       }
    }
    primeTheBuffer(true);
@@ -455,32 +441,15 @@ void showTimeOnly(uint32_t minutes, uint32_t seconds,uint32_t color)
 
    clearImage(0);
 
-   if(displayMode.do2x5)
-   {
-      putColon(color);
-      putValue64(seconds % 10,ONES_PLACE,color);
-      putValue64(seconds / 10,TENS_PLACE,color);
-      putValue64(minutes % 10,MINUTES_PLACE,color);
-      if(minutes / 10)
-      {
-         putValue64(minutes / 10,TENS_OF_MINUTES_PLACE,color);
-      }
-      putHalfBigLetter('T'-'A',0,0,GREEN);
-      putHalfBigLetter('I'-'A',16,0,GREEN);
-      putHalfBigLetter('M'-'A',32,0,GREEN);
-      putHalfBigLetter('E'-'A',48,0,GREEN);
-
-   }
-   else
    {
       // this is the 1x4 display, or a back to back 1x4
-      putLittleColon(color);
-      putValue(seconds % 10,SMALL_ONES_PLACE,color);
-      putValue(seconds / 10,SMALL_TENS_PLACE,color);
-      putValue(minutes % 10,SMALL_MINUTES_PLACE,color);
+      // putLittleColon(color);
+      putValue(seconds % 10,MINI_ONES_PLACE,color);
+      putValue(seconds / 10,MINI_TENS_PLACE,color);
+      putValue(minutes % 10,MINI_MINUTES_PLACE,color);
       if(minutes / 10)
       {
-         putValue(minutes / 10,TENS_OF_SMALL_MINUTES_PLACE,color);
+         putValue(minutes / 10,TENS_OF_MINI_MINUTES_PLACE,color);
       }
    }
    primeTheBuffer(true);
@@ -513,6 +482,12 @@ void parseCommand(char *inputBuffer)
          changeImagePlane();
          break;
       case 'R':
+         if(inputBuffer[1] == ':')
+         {
+            // old legacy command
+            // ignore
+            break;
+         }
          // Perform GliderScore interpretation
          // Standard "Embedded-Ability" format: "Ammss+CR"
          // ASCII character string "Ammss \r" (the letter A, the minutes digits, the seconds digits, the
@@ -547,7 +522,7 @@ void parseCommand(char *inputBuffer)
                {
                   showData(minutes,seconds,round,heat + 'A',flight,STOP_TOP,YELLOW);
                }
-               else if((minutes ==1) && (seconds == 0))
+               else if((minutes == 1) && (seconds == 0))
                {
                   showData(minutes,seconds,round,heat + 'A',flight,STOP_TOP,YELLOW);
                }
@@ -685,7 +660,7 @@ void receiverTask(void const *argument)
       setMode(0);
    }
    #if 0 // sampler code
-   #define DEMO_TIME 5000
+      #define DEMO_TIME 5000
    while(1)
    {
       showRoundAndHeat(9,3,WHITE);

@@ -30,7 +30,16 @@
 
 extern osThreadId scannerTaskHandle;
 
-
+#ifdef LITTLE_PANEL
+typedef struct DisplayModeType
+{
+   bool       alternate8Scan;
+   bool       doInverted;
+   bool       do1x2x2;
+   bool       displayModeIndex;
+   uint16_t   crc;
+}DisplayModeType;
+#else
 typedef struct DisplayModeType
 {
    bool       doScan16;
@@ -39,6 +48,7 @@ typedef struct DisplayModeType
    bool       do2x5;
    uint16_t   crc;
 }DisplayModeType;
+#endif
 
 extern volatile DisplayModeType displayMode;
 extern volatile uint32_t currentMode;
