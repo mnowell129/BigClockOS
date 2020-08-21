@@ -513,6 +513,12 @@ void parseCommand(char *inputBuffer)
          changeImagePlane();
          break;
       case 'R':
+         if(inputBuffer[1] == ':')
+         {
+            // old legacy command
+            // ignore
+            break;
+         }
          // Perform GliderScore interpretation
          // Standard "Embedded-Ability" format: "Ammss+CR"
          // ASCII character string "Ammss \r" (the letter A, the minutes digits, the seconds digits, the
