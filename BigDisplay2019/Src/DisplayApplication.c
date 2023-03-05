@@ -150,6 +150,9 @@ void commitMode(void)
    writeFlash((uint8_t *)modeBuffer,MODE_SIZE_FOR_CRC + 2);
 }
 
+void putAPixel(int32_t x,int32_t y, uint32_t color);
+
+
 /**
  * @brief This tasks monitors the button in a rather simple way.
  *        Then short press cycles through the modes. Long press
@@ -164,11 +167,34 @@ void commitMode(void)
 void buttonTask(void const *argument)
 {
    int32_t downEdgeTime;
+   int32_t i;
+   int32_t j;
    INITGPIOIN(BUTTON);
 
    RTOS_MSEC_DELAY(500);
 
-   //showData(10,00,18,1+ 'A',2,FLY_MIDDLE,GREEN);
+   RTOS_MSEC_DELAY(250);
+   #warning put this back
+   #if 1
+   showData(10,00,1,'A',0,FLY_MIDDLE,GREEN);
+   changeImagePlane();
+   #else
+   while(1)
+   {
+      for(j = 0;j < 64;j++)
+      {
+         for(i = 0;i < 32 * 5;i++)
+         {
+            clearImage(0);
+            putAPixel(i,j,7);
+            primeTheBuffer(true);
+            changeImagePlane();
+            RTOS_MSEC_DELAY(5);
+         }
+      }
+   }
+   #endif
+
 
    while(1)
    {
@@ -189,7 +215,7 @@ void buttonTask(void const *argument)
                   if((delta > 50) && (delta < 1000))
                   {
                      incrementMode();
-                     showData(10,59,18,1+ 'A',2,FLY_MIDDLE,GREEN);
+                     showData(10,59,18,1 + 'A',2,FLY_MIDDLE,GREEN);
                      changeImagePlane();
                   }
                   else if(delta > 1000)
@@ -198,8 +224,8 @@ void buttonTask(void const *argument)
                   }
                   break;
                }
-               
-               
+
+
             }
          }
       }
@@ -439,6 +465,38 @@ void showRoundAndHeat(uint32_t round, uint32_t heat,uint32_t color)
 
 }
 
+void showRoundAndHeatNumericGroup(uint32_t round, uint32_t heat,uint32_t color)
+{
+
+   clearImage(0);
+
+   if(displayMode.do2x5)
+   {
+      putColon(color);
+      // get relative to start of array
+      putBigLetter64('G' - 'A',TENS_PLACE,color);
+      // putBigLetter64(heat,ONES_PLACE,color);
+      putValue64(heat,ONES_PLACE,color);
+      putValue64(round % 10,MINUTES_PLACE,color);
+      if(round / 10)
+      {
+         putValue64(round / 10,HIGH_ROUND_PLACE,color);
+      }
+   }
+   else
+   {
+      // this is the 1x4 display, or a back to back 1x4
+      putBigLetter(heat,SMALL_ONES_PLACE,color);
+      putValue(round % 10,SMALL_MINUTES_PLACE,color);
+      if(round / 10)
+      {
+         putValue(round / 10,TENS_OF_SMALL_MINUTES_PLACE,color);
+      }
+   }
+   primeTheBuffer(true);
+
+}
+
 /**
  * @brief Clear the display and just show the time. Used for TOD
  *        or for idle time when the timer is inactive.
@@ -465,10 +523,10 @@ void showTimeOnly(uint32_t minutes, uint32_t seconds,uint32_t color)
       {
          putValue64(minutes / 10,TENS_OF_MINUTES_PLACE,color);
       }
-      putHalfBigLetter('T'-'A',0,0,GREEN);
-      putHalfBigLetter('I'-'A',16,0,GREEN);
-      putHalfBigLetter('M'-'A',32,0,GREEN);
-      putHalfBigLetter('E'-'A',48,0,GREEN);
+      putHalfBigLetter('T' - 'A',0,0,GREEN);
+      putHalfBigLetter('I' - 'A',16,0,GREEN);
+      putHalfBigLetter('M' - 'A',32,0,GREEN);
+      putHalfBigLetter('E' - 'A',48,0,GREEN);
 
    }
    else
@@ -553,7 +611,7 @@ void parseCommand(char *inputBuffer)
                {
                   showData(minutes,seconds,round,heat + 'A',flight,STOP_TOP,YELLOW);
                }
-               else if((minutes ==1) && (seconds == 0))
+               else if((minutes == 1) && (seconds == 0))
                {
                   showData(minutes,seconds,round,heat + 'A',flight,STOP_TOP,YELLOW);
                }
@@ -573,7 +631,7 @@ void parseCommand(char *inputBuffer)
                break;
             case 'S':
                // announcement time no clock running
-               showRoundAndHeat(round,heat,WHITE);
+               showRoundAndHeatNumericGroup(round,heat + 1,WHITE);
                changeImagePlane();
                break;
             default:
@@ -659,7 +717,10 @@ void radioReceiverTask(void const *argument)
    uart2Init(9600);
    while(1)
    {
+      RTOS_MSEC_DELAY(1);
       uart2Gets((uint8_t *)inputBuffer);
+      uart2Puts((uint8_t *)inputBuffer);
+      uart2Puts((uint8_t *)"\r");
       parseCommand(inputBuffer);
    }
 }
@@ -691,7 +752,7 @@ void receiverTask(void const *argument)
       setMode(0);
    }
    #if 0 // sampler code
-   #define DEMO_TIME 5000
+      #define DEMO_TIME 5000
    while(1)
    {
       showRoundAndHeat(9,3,WHITE);
@@ -719,6 +780,8 @@ void receiverTask(void const *argument)
    while(1)
    {
       uart1Gets((uint8_t *)inputBuffer);
+      uart2Puts((uint8_t *)inputBuffer);
+      uart2Puts((uint8_t *)"\r");
       parseCommand(inputBuffer);
    }
    #endif

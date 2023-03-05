@@ -2024,6 +2024,15 @@ void putBigLetter64(uint8_t value,uint8_t position,uint8_t color)
 }
 
 
+void putAPixel(int32_t x,int32_t y, uint32_t color)
+{
+
+   (*putPixelScanTest)(drawFrame,y,x,color);
+
+   // putPixel(drawFrame,x,y,color);
+
+}
+
 /**
  * @brief Flip from draw frame to show frame.
  *

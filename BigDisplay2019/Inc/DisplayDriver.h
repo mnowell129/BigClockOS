@@ -67,6 +67,7 @@ void putMaximums(int32_t x, int32_t y);
 void putPixelScan8Alternate(uint32_t buffer, int32_t y, int32_t x, uint32_t color);
 void putPixelScan8AlternateSmallDisplay(uint32_t buffer, int32_t y, int32_t x, uint32_t color);
 void putPixelScan8(uint32_t buffer, int32_t y, int32_t x, uint32_t color);
+void putPixelScanTest(uint32_t buffer, int32_t y, int32_t x, uint32_t color);
 void putPixelScan8SmallDisplay(uint32_t buffer, int32_t y, int32_t x, uint32_t color);
 void putPixelScan8Inverted(uint32_t buffer, int32_t y, int32_t x, uint32_t color);
 void putPixelScan8InvertedSmallDisplay(uint32_t buffer, int32_t y, int32_t x, uint32_t color);

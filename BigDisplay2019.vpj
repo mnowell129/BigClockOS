@@ -314,6 +314,11 @@
             </Folder>
          </Folder>
          <Folder Name="EWARM">
+            <Folder Name="BigDisplay2019">
+               <Folder Name="List">
+                  <F N="BigDisplay2019/EWARM/BigDisplay2019/List/BigDisplay2019.map"/>
+               </Folder>
+            </Folder>
             <F N="BigDisplay2019/EWARM/startup_stm32f446xx.s"/>
             <F N="BigDisplay2019/EWARM/stm32f446xx_flash.icf"/>
             <F N="BigDisplay2019/EWARM/stm32f446xx_sram.icf"/>

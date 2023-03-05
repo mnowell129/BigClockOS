@@ -94,6 +94,7 @@ uint32_t uart2Init(uint32_t baudRate)
    uart2RxCount = 0;
 
    INITGPIOAF(XBEERX);
+   INITGPIOAF(XBEETX);
    LL_APB1_GRP1_EnableClock(LL_APB1_GRP1_PERIPH_USART2);
    NVIC_SetPriority(USART2_IRQn,5);
 
@@ -115,6 +116,7 @@ uint32_t uart2Init(uint32_t baudRate)
    USART2->CR1 &= ~(USART_CR1_TCIE | USART_CR1_TXEIE);
 
    USART2->CR1 |= USART_CR1_RXNEIE;
+   LL_USART_EnableDirectionTx(USART2);
    USART2->SR = 0; 
 
    NVIC_EnableIRQ(USART2_IRQn);
@@ -219,3 +221,22 @@ void uart2Gets(Byte *buffer)
    } 
 } 
 
+
+void usart2Putch(uint8_t value)
+{
+
+   while(!LL_USART_IsActiveFlag_TC(USART2))
+   {
+      RTOS_MSEC_DELAY(1);
+   }
+   LL_USART_TransmitData8(USART2,value);
+
+}
+
+void uart2Puts(uint8_t *string)
+{
+   while(*string)
+   {
+      usart2Putch(*string++);
+   }
+}

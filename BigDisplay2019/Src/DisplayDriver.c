@@ -672,7 +672,7 @@ volatile DisplayModeType displayMode =
    .doScan16 = false,
    .doInverted = false,
    .do2x5 = true,
-   .alternate8Scan = true
+   .alternate8Scan = false,
 };
 
 #define ENTRY(a,b,c,d) {.doScan16 = a,.alternate8Scan = b,.doInverted = c,.do2x5 = d}
@@ -850,11 +850,13 @@ void setMode(uint32_t mode)
    newMode &= 0x0F;
 
    ENTER_CRITICAL();
+   #if 1
    displayMode.alternate8Scan = displayModes[newMode].alternate8Scan;
    displayMode.do2x5 = displayModes[newMode].do2x5;
    displayMode.doScan16 = displayModes[newMode].doScan16;
    displayMode.doInverted = displayModes[newMode].doInverted;
    currentMode = newMode;
+   #endif
    setupPixelPutFunction();
    EXIT_CRITICAL();
 }
@@ -1009,6 +1011,24 @@ const uint32_t  x4Delta[] =
 
 };
 
+const uint32_t  x5Delta[] =
+{
+   0,
+   2*32,
+   4*32,
+   6*32,
+   8*32
+};
+
+
+const uint32_t  x6Delta[] =
+{
+   32,
+   3*32,
+   5*32,
+   7*32,
+   9*32
+};
 
 
 /**
@@ -1025,6 +1045,10 @@ const uint32_t  x4Delta[] =
 
 #define NEWX3(x)   (x & 0x0F)+(x3Delta[x>>4])
 #define NEWX4(x)   (x & 0x0F)+(x4Delta[x>>4])
+
+
+#define NEWX5(x)   (x & 0x1F)+(x5Delta[x>>5])
+#define NEWX6(x)   (x & 0x1F)+(x6Delta[x>>5])
 
 
 // Maximum coordinates for big display
@@ -1253,11 +1277,11 @@ void putPixelScan8(uint32_t buffer, int32_t y, int32_t x, uint32_t color)
    // for the upright version this is backwards from the prototype
    if(y & 0x08)
    {
-      localx = NEWX2(x);
+      localx = NEWX5(x);
    }
    else
    {
-      localx = NEWX1(x);
+      localx = NEWX6(x);
    }
    // now turn on the pixel, y & 7 picks one of the 8 scan rows
    // x is the position in the scan row
@@ -1270,6 +1294,55 @@ void putPixelScan8(uint32_t buffer, int32_t y, int32_t x, uint32_t color)
     */
    displayBufferOneEighthScan[buffer][y & 7][localx] |= color << (shift * 3);
 }
+
+void putPixelScanTest(uint32_t buffer, int32_t y, int32_t x, uint32_t color)
+{
+   uint32_t shift;
+   uint32_t localx; // , localy;
+
+   if((x < 0) || (y < 0))
+   {
+      return;
+   }
+   if((x > xMaximum) || (y > yMaximum))
+   {
+      return;
+   }
+
+
+   // This gets top to bottom and left to right sorted out
+   // Coordinates are 0,0, top left corner.
+   // Not needed for upright display.
+   // y = yMaximum - y;
+   // x = xMaximum - x;
+
+   // so 64 rows divided by 16 determines 0..3, or which pixel in
+   // the 12 bits we are operating on.
+   // Also works for a half high display with 1x4 arrangement.
+   shift = y >> 4;
+   // figure out the odd tweak to X based on whether we are not on the prime row
+   // or the alternate row , physical row that is, for a given scan row of pixels.
+   // for the upright version this is backwards from the prototype
+   if(y & 0x08)
+   {
+      localx = NEWX5(x);
+   }
+   else
+   {
+      localx = NEWX6(x);
+   }
+   // now turn on the pixel, y & 7 picks one of the 8 scan rows
+   // x is the position in the scan row
+   // shift moves the pixel to row 16 + y, 32+y or 48+y physically respectively.
+   // also upright the shift is the other direction, that is the
+   // 0th pixel ends up in the upper bits of the word???
+   /**
+    * @todo figure out if the shift needs to be << (12 - shift*3) 
+    *       or not.
+    */
+   displayBufferOneEighthScan[buffer][y & 7][localx] |= color << (shift * 3);
+}
+
 /**
  * @brief Draw pixels for 1/8 scan, dual 1x4 mounting, upright
  *        display, old style scan order.
@@ -1411,11 +1484,11 @@ void putPixelScan8Inverted(uint32_t buffer, int32_t y, int32_t x, uint32_t color
    {
       // sample x is 31, y and 8 is true
       // shift x is 0, index adds 16 to x, it was 31, now is 47, this is correct.
-      localx = NEWX2(x);
+      localx = NEWX5(x);
    }
    else
    {
-      localx = NEWX1(x);
+      localx = NEWX6(x);
    }
    // now turn on the pixel, y & 7 picks one of the 8 scan rows
    // x is the position in the scan row

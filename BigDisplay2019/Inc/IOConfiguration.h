@@ -77,7 +77,7 @@
 #define XBEETX_ASSERTED             ACTIVE_HIGH
 #define XBEETX_DEASSERTED           ACTIVE_LOW
 #define XBEETX_GPIO_OTYPE           (LL_GPIO_OUTPUT_PUSHPULL)
-#define XBEETX_PUPD                 (LL_GPIO_PULL_NO) 
+#define XBEETX_PUPD                 (LL_GPIO_PULL_UP) 
 #define XBEETX_SPEED                (LL_GPIO_SPEED_FREQ_VERY_HIGH)
 
 #define XBEETX_GROUP                PORT(XBEETX_PORT)
@@ -97,7 +97,7 @@
 #define XBEERX_ASSERTED             ACTIVE_HIGH
 #define XBEERX_DEASSERTED           ACTIVE_LOW
 #define XBEERX_GPIO_OTYPE           (LL_GPIO_OUTPUT_PUSHPULL)
-#define XBEERX_PUPD                 (LL_GPIO_PULL_NO) 
+#define XBEERX_PUPD                 (LL_GPIO_PULL_UP) 
 #define XBEERX_SPEED                (LL_GPIO_SPEED_FREQ_VERY_HIGH)
 
 #define XBEERX_GROUP                PORT(XBEERX_PORT)
@@ -140,7 +140,7 @@
 #define RS485DATA_RX_ASSERTED                  ACTIVE_HIGH
 #define RS485DATA_RX_DEASSERTED                ACTIVE_LOW
 #define RS485DATA_RX_GPIO_OTYPE                (LL_GPIO_OUTPUT_PUSHPULL)
-#define RS485DATA_RX_PUPD                      (LL_GPIO_PULL_NO) 
+#define RS485DATA_RX_PUPD                      (LL_GPIO_PULL_UP) 
 #define RS485DATA_RX_SPEED                     (LL_GPIO_SPEED_FREQ_VERY_HIGH)
                                      
 #define RS485DATA_RX_GROUP                     PORT(RS485DATA_RX_PORT)

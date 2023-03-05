@@ -34,6 +34,7 @@ uint32_t uart2Init(uint32_t baudRate);
 uint8_t uart2Getch(void);
 int32_t uart2GetchTO(uint32_t timeout);
 void uart2Gets(uint8_t *buffer);
+void uart2Puts(uint8_t *buffer);
 
 #endif
 
