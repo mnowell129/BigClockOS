@@ -780,8 +780,8 @@ void receiverTask(void const *argument)
    while(1)
    {
       uart1Gets((uint8_t *)inputBuffer);
-      uart2Puts((uint8_t *)inputBuffer);
-      uart2Puts((uint8_t *)"\r");
+//     uart2Puts((uint8_t *)inputBuffer);
+//      uart2Puts((uint8_t *)"\r");
       parseCommand(inputBuffer);
    }
    #endif
