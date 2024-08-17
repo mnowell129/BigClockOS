@@ -168,7 +168,8 @@ void buttonTask(void const *argument)
 
    RTOS_MSEC_DELAY(500);
 
-   //showData(10,00,18,1+ 'A',2,FLY_MIDDLE,GREEN);
+   showData(10,00,1,'A',0,FLY_MIDDLE,GREEN);
+   changeImagePlane();
 
    while(1)
    {
@@ -719,6 +720,7 @@ void receiverTask(void const *argument)
    while(1)
    {
       uart1Gets((uint8_t *)inputBuffer);
+      //uart2Puts(inputBuffer);
       parseCommand(inputBuffer);
    }
    #endif
